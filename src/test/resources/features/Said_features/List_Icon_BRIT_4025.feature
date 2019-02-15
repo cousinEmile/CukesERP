@@ -1,0 +1,26 @@
+Feature: 
+
+	#User Story; 
+	#
+	# * As an inventory manager 2 should be able to do actions in import based module on list module 
+	#
+	#Acceptance Criteria;
+	# * Verify that manager should be able to click list icon
+  @BRIT-4025
+  Scenario: Cucumber - Calendar / Import actions - List Icon (Manager)
+		# Pre-Condition: Environment is up and running.
+
+    Given user on the First page
+    When user clicks Brite Erp Demo
+    Then  Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
+
+    When Click on Calendar icon on Headers
+    Then Calendar page should be displayed with "actualTitle"
+
+    When hover to the "List" option on the right top corner
+    Then the manager should be able to see "List" button
+    And click List button
+    Then List page should be displayed with "actualTitle"
+    And url is  "http://52.39.162.23/web?#view_type=list&model=calendar.event&menu_id=120&action=136"
+		
+		
