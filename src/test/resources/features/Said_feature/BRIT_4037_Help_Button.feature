@@ -22,4 +22,4 @@ Feature:
 
     Then Help page Title should be displayed "How to import data into Odoo"
     And url is "https://www.odoo.com/documentation/user/11.0/general/base_import/import_faq.html"
-    Then manager should be able to see "How to import data into Odoo" Message
+    Then manager should be able to see how to import data into odoo "How to import data into Odoo" Message

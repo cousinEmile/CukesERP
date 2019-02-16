@@ -17,6 +17,6 @@ Feature:
     Then manager clicks List button
     When manager clicks Import button
 
-    Then manager should be able to see Input line with "no file chosen..." by default
-    And manager should be able to Type "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx" to the Upload line - Fail
+    Then manager should be able to see Input line with "No file chosen..." by default
+    And manager should be able to Type "\uploaded_files\utility.xlsx" to the Upload line - Fail
     Then manager should be able to see Uploaded file "utility.xlsx" - Fail

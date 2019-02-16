@@ -19,5 +19,5 @@ Feature:
 
     When manager clicks to the Load File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
 
-    Then manager should be able to see "Reload File" button
+    Then manager should be able to see reload file "Reload File" button
     And  manager clicks to the Reload File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\EmployeesTestData.xlsx" to the Upload line

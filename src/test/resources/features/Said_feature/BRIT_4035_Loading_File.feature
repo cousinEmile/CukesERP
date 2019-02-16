@@ -17,7 +17,7 @@ Feature:
     Then manager clicks List button
     When manager clicks Import button
 
-    When manager should be able to click Load File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx" to the Upload line
+    When manager should be able to click Load File Button and input "\uploaded_files\utility.xlsx" to the Upload line
     Then "utility.xlsx" should be displayed on the Input Line
-    And "Map your columns to import" message should be displayed
+    And manager should be able to see map your columns to import "Map your columns to import" Message
 		
