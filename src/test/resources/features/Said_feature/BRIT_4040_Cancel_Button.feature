@@ -12,15 +12,15 @@ Feature:
 		        # Pre-Condition: Environment is up and running
 
     Given user on the First page
-    When user clicks Brite Erp Demo
+    When user clicks BriteErpDemo button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then click Calendar icon on Headers
-    Then click list button
-    Then click Import button
+    Then manager clicks Calendar icon on Headers
+    Then manager clicks List button
+    When manager clicks Import button
 
-    When the manager clicks to the Load File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
-    Then the manager should be able to see "Cancel" button
-    And click Cancel button
+    When manager clicks to the Load File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
+    Then manager should be able to see "Cancel" button
+    And manager clicks Cancel button
 
-    Then List page should be displayed with "actualTitle"
-    And url is  "http://52.39.162.23/web?#view_type=list&model=calendar.event&menu_id=120&action=136"
+    Then List page Title should be displayed with "Meetings - Odoo"
+    And url is "http://52.39.162.23/web?#view_type=list&model=calendar.event&menu_id=120&action=136"

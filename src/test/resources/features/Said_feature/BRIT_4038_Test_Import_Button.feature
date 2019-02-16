@@ -14,14 +14,14 @@ Feature:
 		# Pre-Condition: Environment is up and running.
 
     Given user on the First page
-    When user clicks Brite Erp Demo
+    When user clicks BriteErpDemo button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then click Calendar icon on Headers
-    Then click list button
-    Then click Import button
+    Then manager clicks Calendar icon on Headers
+    Then manager clicks List button
+    When manager clicks Import button
 
-    When the manager click to the Load File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
-    Then the manager should be able to see "Test Import" button
-    And click Test Import button
-    Then the manager should be able to see "You must configure at least one field to import" Message
+    When manager clicks to the Load File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
+    Then manager should be able to see "Test Import" button
+    And manager clicks Test Import button
+    Then manager should be able to see "You must configure at least one field to import" Message
 

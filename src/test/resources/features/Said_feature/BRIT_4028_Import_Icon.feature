@@ -11,11 +11,11 @@ Feature:
 		# Pre-Condition: Environment is up and running.
 
     Given user on the First page
-    When user clicks Brite Erp Demo
+    When user clicks BriteErpDemo button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then click Calendar icon on Headers
-    Then click List button
+    Then manager clicks Calendar icon on Headers
+    Then manager clicks List button
 
-    Then the manager should be able to see "Import" button
-    When click Import button
-    Then Import page should be displayed with "actualTitle"
+    Then manager should be able to see "Import" button
+    When manager clicks Import button
+    Then Import page Title should be displayed "actualTitle"

@@ -10,7 +10,7 @@ Feature:
     When user clicks BriteErpDemo button
     Then Login page Title should be displayed "Login | Website localhost"
     When "<user>" logs in using "<email>" and "<password>"
-    Then Inbox page should be displayed with "#Inbox - Odoo"
+    Then Inbox page Title should be displayed "#Inbox - Odoo"
     And "<user>" name should be "<actualUser>"
 
     Examples:

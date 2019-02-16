@@ -24,8 +24,8 @@ public class CalendarSteps {
     }
 
 
-    @Then("Calendar page should be displayed with {string}")
-    public void calendar_page_should_be_displayed_with(String actualTitle) {
+    @Then("Calendar page Title should be displayed {string}")
+    public void calendar_page_Title_should_be_displayed (String actualTitle) {
         Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
     }
 
@@ -36,7 +36,7 @@ public class CalendarSteps {
 
     @Then("manager should be able to see {string} button")
     public void manager_should_be_able_to_see_button(String listButton) {
-        Assert.assertEquals(pages.getCalendar().listView.getText(), listButton);
+        Assert.assertEquals(pages.getCalendar().listView.getAttribute("data-original-title"), listButton);
     }
 
     @Then("manager clicks List button")

@@ -14,8 +14,8 @@ public class InboxSteps {
     Pages pages = new Pages();
 
 
-    @Then("Inbox page should be displayed with {string}")
-    public void inbox_page_should_be_displayed_with(String actualTitle) {
+    @Then("Inbox page Title should be displayed {string}")
+    public void inbox_page_Title_should_be_displayed(String actualTitle) {
         BrowserUtils.waitUntilTitleEquals(5, actualTitle);
         Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
     }
@@ -25,14 +25,14 @@ public class InboxSteps {
         Assert.assertEquals(user, actualUser);
     }
 
-    @Then("the manager should be able to see following Headers:")
-    public void the_manager_should_be_able_to_see_following_Headers(List<String> Headers) {
+    @Then("manager should be able to see following Headers:")
+    public void manager_should_be_able_to_see_following_Headers(List<String> Headers) {
         List<String> actualHeaders = BrowserUtils.getElementsText(pages.getInboxPage().allHeaders);
         Assert.assertEquals(Headers, actualHeaders);
     }
 
-    @When("Click Calendar icon on Headers")
-    public void click_Calendar_icon_on_Headers() {
+    @When("manager clicks Calendar icon on Headers")
+    public void manager_clicks_Calendar_icon_on_Headers() {
         pages.getHeaderPage().calendar_button.click();
     }
 

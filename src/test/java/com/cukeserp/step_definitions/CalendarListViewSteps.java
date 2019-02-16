@@ -10,8 +10,8 @@ import org.openqa.selenium.WebDriver;
 public class CalendarListViewSteps {
     Pages pages = new Pages();
 
-    @Then("List page should be displayed with {string}")
-    public void list_page_should_be_displayed_with(String actualTitle) {
+    @Then("List page Title should be displayed {string}")
+    public void list_page_Title_should_be_displayed(String actualTitle) {
         Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
     }
 
