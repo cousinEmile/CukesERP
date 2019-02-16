@@ -16,6 +16,6 @@ Feature:
     Then manager clicks Calendar icon on Headers
     Then manager clicks List button
 
-    Then manager should be able to see "Import" button
+    Then manager should be able to see import "Import" button
     When manager clicks Import button
     Then Import page Title should be displayed "actualTitle"

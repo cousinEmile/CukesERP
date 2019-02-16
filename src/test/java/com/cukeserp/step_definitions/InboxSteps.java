@@ -16,7 +16,7 @@ public class InboxSteps {
 
     @Then("Inbox page Title should be displayed {string}")
     public void inbox_page_Title_should_be_displayed(String actualTitle) {
-        BrowserUtils.waitUntilTitleEquals(5, actualTitle);
+        BrowserUtils.waitUntilTitleEquals(10, actualTitle);
         Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
     }
 

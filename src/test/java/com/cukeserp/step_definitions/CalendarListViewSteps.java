@@ -1,11 +1,14 @@
 package com.cukeserp.step_definitions;
 
 import com.cukeserp.pages.CalendarListViewPage;
+import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Driver;
 import com.cukeserp.utilities.Pages;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CalendarListViewSteps {
     Pages pages = new Pages();
@@ -17,6 +20,7 @@ public class CalendarListViewSteps {
 
     @Then("url is {string}")
     public void url_is(String actualURL) {
-       Assert.assertEquals(Driver.getDriver().getCurrentUrl(),actualURL);
+        BrowserUtils.waitForURL(actualURL, 5);
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), actualURL);
     }
 }

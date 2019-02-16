@@ -28,6 +28,7 @@ public class BrowserUtils {
         }
     }
 //s
+
     /**
      * Generates the String path to the screenshot taken.
      * Within the method, the screenshot is taken and is saved into FileUtils.
@@ -38,12 +39,12 @@ public class BrowserUtils {
      */
     public static String getScreenshot(String name) {
         // name the screenshot with current date-time to avoid duplicate naming
-        String time = new SimpleDateFormat ( "yyyyMMddhhmmss").format( new Date ());
+        String time = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
         // TakeScreenshot -> interface from selenium which takes screenshots
         TakesScreenshot takesScreenshot = (TakesScreenshot) Driver.getDriver();
 
-        File source = takesScreenshot.getScreenshotAs( OutputType.FILE);
+        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
         // full path to the screenshot location
         String target = System.getProperty("user.dir") + "/test-output/Screenshots" + name + time + ".png";
@@ -52,7 +53,7 @@ public class BrowserUtils {
 
         // save the screenshot to the path given
         try {
-            FileUtils.copyFile( source, finalDestination);
+            FileUtils.copyFile(source, finalDestination);
         } catch (IOException io) {
         }
 
@@ -74,8 +75,8 @@ public class BrowserUtils {
         Driver.getDriver().switchTo().window(origin);
     }
 
-    public static void hover( WebElement element) {
-        Actions actions = new Actions( Driver.getDriver());
+    public static void hover(WebElement element) {
+        Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
 
@@ -86,15 +87,15 @@ public class BrowserUtils {
      * @param list
      * @return
      */
-    public static List<String> getElementsText( List<WebElement> list) {
-        List<String> elemTexts = new ArrayList<> ();
+    public static List<String> getElementsText(List<WebElement> list) {
+        List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {
             elemTexts.add(el.getText());
         }
         return elemTexts;
     }
 
-    public static List<String> getElementsText( By locator) {
+    public static List<String> getElementsText(By locator) {
 
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
@@ -106,8 +107,8 @@ public class BrowserUtils {
     }
 
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
-        WebDriverWait wait = new WebDriverWait( Driver.getDriver(), timeToWaitInSec);
-        return wait.until( ExpectedConditions.visibilityOf( element));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
+        return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static WebElement waitForVisibility(By locator, int timeout) {
@@ -125,9 +126,14 @@ public class BrowserUtils {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
+    public static Boolean waitForURL(String actualURL, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        return wait.until(ExpectedConditions.urlToBe(actualURL));
+    }
+
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-            public Boolean apply( WebDriver driver) {
+            public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
             }
         };
@@ -142,11 +148,11 @@ public class BrowserUtils {
     }
 
     public static WebElement fluentWait(final WebElement webElement, int timeinsec) {
-        FluentWait<WebDriver> wait = new FluentWait<WebDriver>( Driver.getDriver())
-                .withTimeout( Duration.ofSeconds( timeinsec))
+        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver())
+                .withTimeout(Duration.ofSeconds(timeinsec))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(NoSuchElementException.class);
-        WebElement element = wait.until(new Function<WebDriver, WebElement> () {
+        WebElement element = wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
                 return webElement;
             }
@@ -184,12 +190,13 @@ public class BrowserUtils {
 
     /**
      * Waits for element to be not stale
+     *
      * @param element
      */
     public void waitForStaleElement(WebElement element) {
         int y = 0;
         while (y <= 15) {
-            if(y==1)
+            if (y == 1)
                 try {
                     element.isDisplayed();
                     break;
@@ -213,10 +220,11 @@ public class BrowserUtils {
 
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
+     *
      * @param select
      * @return
      */
-    public WebElement selectRandomTextFromDropdown( Select select) {
+    public WebElement selectRandomTextFromDropdown(Select select) {
         Random random = new Random();
         List<WebElement> weblist = select.getOptions();
         int optionIndex = 1 + random.nextInt(weblist.size() - 1);
@@ -226,6 +234,7 @@ public class BrowserUtils {
 
     /**
      * Clicks on an element using JavaScript
+     *
      * @param element
      */
     public void clickWithJS(WebElement element) {
@@ -236,6 +245,7 @@ public class BrowserUtils {
 
     /**
      * Scrolls down to an element using JavaScript
+     *
      * @param element
      */
     public void scrollToElement(WebElement element) {
@@ -244,6 +254,7 @@ public class BrowserUtils {
 
     /**
      * Performs double click action on an element
+     *
      * @param element
      */
     public void doubleClick(WebElement element) {
@@ -252,6 +263,7 @@ public class BrowserUtils {
 
     /**
      * Changes the HTML attribute of a Web Element to the given value using JavaScript
+     *
      * @param element
      * @param attributeName
      * @param attributeValue
@@ -261,38 +273,37 @@ public class BrowserUtils {
     }
 
     /**
-     *
      * @param element
      * @param check
      */
-    public void selectCheckBox(WebElement element, boolean check){
-        if(check){
-            if(!element.isSelected()){
+    public void selectCheckBox(WebElement element, boolean check) {
+        if (check) {
+            if (!element.isSelected()) {
                 element.click();
             }
         } else {
-            if(element.isSelected()){
+            if (element.isSelected()) {
                 element.click();
             }
         }
     }
 
-    public String[] fromListToString(List<WebElement> x){
+    public String[] fromListToString(List<WebElement> x) {
         String[] trans = new String[x.size()];
         for (WebElement xx : x) {
             int count = 0;
             trans[count] = xx.getText();
             count++;
         }
-        Arrays.sort( trans);
+        Arrays.sort(trans);
         return trans;
     }
 
-    public static void grabHold(WebDriver driver, String parentHandle){
+    public static void grabHold(WebDriver driver, String parentHandle) {
         /* /NOTE: Be sure to set -> String parentHandle=driver.getWindowHandle(); prior to the action preceding method deployment */
-        Set<String> windows= driver.getWindowHandles();
-        for(String window: windows){
-            if(window!=parentHandle)
+        Set<String> windows = driver.getWindowHandles();
+        for (String window : windows) {
+            if (window != parentHandle)
                 driver.switchTo().window(window);
         }
     }
@@ -309,10 +320,9 @@ public class BrowserUtils {
     }
 
 
-
     public void waitForPresenceOfElementByCss(String css) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),
-                                               Long.parseLong(ConfigurationReader.getProperties("timeout")));
+                Long.parseLong(ConfigurationReader.getProperties("timeout")));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(css)));
     }
 
@@ -321,7 +331,7 @@ public class BrowserUtils {
         Robot rb;
         try {
             rb = new Robot();
-            rb.keyPress( KeyEvent.VK_ENTER);
+            rb.keyPress(KeyEvent.VK_ENTER);
             rb.keyRelease(KeyEvent.VK_ENTER);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -358,9 +368,6 @@ public class BrowserUtils {
         }
         return elementVisible;
     }
-
-
-
 
 
 }

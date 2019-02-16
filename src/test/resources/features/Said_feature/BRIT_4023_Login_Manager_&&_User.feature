@@ -1,7 +1,7 @@
 Feature:
 
 
-  @BRIT-4023 @Said
+  @BRIT-4023
   Scenario Outline: BRIT-4023 Cucumber - Calendar / Import actions - Login (Manager && User)
    # Pre-Condition: Environment is up and running
 
