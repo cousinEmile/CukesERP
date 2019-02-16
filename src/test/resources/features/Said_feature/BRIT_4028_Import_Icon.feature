@@ -18,4 +18,4 @@ Feature:
 
     Then manager should be able to see import "Import" button
     When manager clicks Import button
-    Then Import page Title should be displayed "actualTitle"
+    Then Import page Title should be displayed "Import a File - Odoo"
