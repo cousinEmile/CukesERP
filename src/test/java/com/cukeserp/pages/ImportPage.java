@@ -63,7 +63,7 @@ public class ImportPage {
     public WebElement testImportButton;
 
     @FindBy(xpath = "(//div[@class='o_cp_buttons']/button)[2]")
-    public WebElement importButton;
+    public WebElement importButtonToImportFile;
 
     @FindBy(xpath = "(//div[@class='o_cp_buttons']/button)[3]")
     public WebElement cancelButton;

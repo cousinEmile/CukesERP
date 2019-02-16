@@ -10,7 +10,7 @@ Feature:
   Scenario: Cucumber - Calendar / Import actions - Input line, FAIL (Manager)
 		# Pre-Condition: Environment is up and running.
 
-    Given user on the First page
+    Given user on the Landing page
     When user clicks BriteErpDemo button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
     Then manager clicks Calendar icon on Headers
@@ -18,5 +18,5 @@ Feature:
     When manager clicks Import button
 
     Then manager should be able to see Input line with "No file chosen..." by default
-    And manager should be able to Type "\uploaded_files\utility.xlsx" to the Upload line - Fail
+    And manager should be able to Type "/uploaded_files/utility.xlsx" to the Upload line - Fail
     Then manager should be able to see Uploaded file "utility.xlsx" - Fail

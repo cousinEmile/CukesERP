@@ -1,5 +1,6 @@
 package com.cukeserp.step_definitions;
 
+import com.cukeserp.utilities.ApplicationConstants;
 import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Driver;
 import com.cukeserp.utilities.Pages;
@@ -8,7 +9,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class ImportSteps {
+public class ImportSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
     @Then("Import page Title should be displayed {string}")
@@ -29,7 +30,7 @@ public class ImportSteps {
 
     @Then("manager should be able to see Uploaded file {string} - Fail")
     public void manager_should_be_able_to_see_Uploaded_file_Fail(String utilityXlsx) {
-        Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("placeholder"), utilityXlsx);
+        Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("value"), utilityXlsx);
     }
 
     @When("manager should be able to click Load File Button and input {string} to the Upload line")
@@ -42,10 +43,10 @@ public class ImportSteps {
         Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("value"), utilityXlsx);
     }
 
-    @Then("manager should be able to see map your columns to import {string} Message")
-    public void manager_should_be_able_to_see_map_your_columns_to_import_Message(String Message) {
+    @Then("manager should be able to see Map your columns to import Message")
+    public void manager_should_be_able_to_see_Map_your_columns_to_import_Message() {
         BrowserUtils.waitForVisibility(pages.getImportPage().mapYourColumnsToImport, 5);
-        Assert.assertEquals(pages.getImportPage().mapYourColumnsToImport.getText(), Message);
+        Assert.assertEquals(pages.getImportPage().mapYourColumnsToImport.getText(), MAP_YOUR_COULMS_TO_IMPORT);
     }
 }
 

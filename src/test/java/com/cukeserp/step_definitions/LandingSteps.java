@@ -12,13 +12,13 @@ import org.junit.Assert;
 public class LandingSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
-    @Given("user on the First page")
-    public void user_on_the_First_page() {
+    @Given("user on the Landing page")
+    public void user_on_the_Landing_page() {
         Driver.getDriver().get(ConfigurationReader.getProperties("url"));
     }
 
-    @Then("First page Title should be displayed {string}")
-    public void first_page_Title_should_be_displayed(String actualTitle) {
+    @Then("Landing page Title should be displayed {string}")
+    public void landing_page_Title_should_be_displayed(String actualTitle) {
         Assert.assertEquals(Driver.getDriver().getTitle(),actualTitle);
     }
 

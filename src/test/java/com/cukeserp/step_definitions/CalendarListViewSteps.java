@@ -1,6 +1,7 @@
 package com.cukeserp.step_definitions;
 
 import com.cukeserp.pages.CalendarListViewPage;
+import com.cukeserp.utilities.ApplicationConstants;
 import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Driver;
 import com.cukeserp.utilities.Pages;
@@ -11,7 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CalendarListViewSteps {
+import java.applet.AppletContext;
+
+public class CalendarListViewSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
     @Then("List page Title should be displayed {string}")
@@ -25,9 +28,9 @@ public class CalendarListViewSteps {
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), actualURL);
     }
 
-    @Then("manager should be able to see import {string} button")
-    public void manager_should_be_able_to_see_import_button(String importButton) {
-        Assert.assertEquals(pages.getCalendarListViewPage().import_button.getText(),importButton);
+    @Then("manager should be able to see Import button")
+    public void manager_should_be_able_to_see_Import_button() {
+        Assert.assertEquals(pages.getCalendarListViewPage().import_button.getText(),IMPORT_BUTTON);
     }
 
     @When("manager clicks Import button")

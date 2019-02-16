@@ -1,6 +1,7 @@
 package com.cukeserp.step_definitions;
 
 import com.cukeserp.pages.CalendarPage;
+import com.cukeserp.utilities.ApplicationConstants;
 import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Driver;
 import com.cukeserp.utilities.Pages;
@@ -12,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 import static com.cukeserp.utilities.ApplicationConstants.CALENDAR_PAGE_TITLE;
 
-public class CalendarSteps {
+public class CalendarSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
     @Given("user is on the Calendar page")
@@ -27,14 +28,14 @@ public class CalendarSteps {
         Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
     }
 
-    @When("hover to the {string} option on the right top corner")
-    public void hover_to_the_option_on_the_right_top_corner(String listButton) {
+    @When("hover to the List option on the right top corner")
+    public void hover_to_the_List_option_on_the_right_top_corner() {
         BrowserUtils.hover(pages.getCalendar().listView);
     }
 
-    @Then("manager should be able to see list {string} button")
-    public void manager_should_be_able_to_see_list_button(String listButton) {
-        Assert.assertEquals(pages.getCalendar().listView.getAttribute("data-original-title"), listButton);
+    @Then("manager should be able to see List button")
+    public void manager_should_be_able_to_see_List_button() {
+        Assert.assertEquals(pages.getCalendar().listView.getAttribute("data-original-title"), LIST_ICON);
     }
 
     @Then("manager clicks List button")
