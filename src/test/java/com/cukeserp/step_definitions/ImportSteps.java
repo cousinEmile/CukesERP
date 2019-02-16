@@ -48,5 +48,21 @@ public class ImportSteps implements ApplicationConstants {
         BrowserUtils.waitForVisibility(pages.getImportPage().mapYourColumnsToImport, 5);
         Assert.assertEquals(pages.getImportPage().mapYourColumnsToImport.getText(), MAP_YOUR_COULMS_TO_IMPORT);
     }
+
+    @Then("manager should be able to see The first row contains the label of the column Checkbox")
+    public void manager_should_be_able_to_see_The_first_row_contains_the_label_of_the_column_Checkbox() {
+
+    }
+
+    @Then("verify Checkbox The first row contains the label of the column is selected by default")
+    public void verify_Checkbox_The_first_row_contains_the_label_of_the_column_is_selected_by_default() {
+
+    }
+
+    @Then("manager clicks The first row contains the label of the column Checkbox")
+    public void manager_clicks_The_first_row_contains_the_label_of_the_column_Checkbox() {
+
+    }
+
 }
 
