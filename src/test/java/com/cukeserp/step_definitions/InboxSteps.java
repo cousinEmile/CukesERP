@@ -31,8 +31,8 @@ public class InboxSteps {
         Assert.assertEquals(Headers, actualHeaders);
     }
 
-    @When("Click on Calendar icon on Headers")
-    public void click_on_Calendar_icon_on_Headers() {
+    @When("Click Calendar icon on Headers")
+    public void click_Calendar_icon_on_Headers() {
         pages.getHeaderPage().calendar_button.click();
     }
 

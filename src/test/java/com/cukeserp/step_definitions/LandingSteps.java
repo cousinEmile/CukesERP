@@ -22,9 +22,8 @@ public class LandingSteps implements ApplicationConstants {
         Assert.assertEquals(Driver.getDriver().getTitle(),actualTitle);
     }
 
-    @When("user clicks Brite Erp Demo")
-    public void user_clicks_Brite_Erp_Demo() {
-        pages.getLandingPage().BriteErpDemo_button.click();
+    @When("user clicks BriteErpDemo button")
+    public void user_clicks_BriteErpDemo_button() { pages.getLandingPage().BriteErpDemo_button.click();
     }
 
 

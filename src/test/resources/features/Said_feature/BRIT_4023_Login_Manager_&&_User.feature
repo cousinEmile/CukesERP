@@ -7,7 +7,7 @@ Feature:
 
     Given user on the First page
     Then First page Title should be displayed "Odoo"
-    When user clicks Brite Erp Demo
+    When user clicks BriteErpDemo button
     Then Login page Title should be displayed "Login | Website localhost"
     When "<user>" logs in using "<email>" and "<password>"
     Then Inbox page should be displayed with "#Inbox - Odoo"

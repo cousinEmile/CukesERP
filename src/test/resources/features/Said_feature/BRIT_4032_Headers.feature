@@ -6,7 +6,7 @@ Feature:
    # Pre-Condition: Environment is up and running
 
     Given user on the First page
-    When user clicks Brite Erp Demo
+    When user clicks BriteErpDemo button
     And Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
     Then the manager should be able to see following Headers:
       | Discuss     |
