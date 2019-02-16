@@ -44,9 +44,7 @@ public class CalendarSteps {
 
     @Then("click List button")
     public void click_List_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
-    }
 
+    }
 
 }
