@@ -7,7 +7,7 @@ Feature:
 
     Given user on the First page
     When user clicks Brite Erp Demo
-    And  Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
+    And Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
     Then the manager should be able to see following Headers:
       | Discuss     |
       | Calendar    |

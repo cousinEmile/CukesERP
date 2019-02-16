@@ -12,15 +12,15 @@ Feature:
 
     Given user on the First page
     When user clicks Brite Erp Demo
-    Then  Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
+    Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
 
     When Click on Calendar icon on Headers
-    Then Calendar page should be displayed with "actualTitle"
+    Then Calendar page should be displayed with "Meetings - Odoo"
 
     When hover to the "List" option on the right top corner
     Then the manager should be able to see "List" button
     And click List button
-    Then List page should be displayed with "actualTitle"
+    Then List page should be displayed with "Meetings - Odoo"
     And url is  "http://52.39.162.23/web?#view_type=list&model=calendar.event&menu_id=120&action=136"
 		
 		
