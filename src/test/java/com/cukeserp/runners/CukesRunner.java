@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
         features = "src/test/resources/features/ImportFunctionality/Aiman_feature",
         glue = "com.cukeserp.step_definitions"
         ,dryRun = false
-        ,tags = "@BRIT-4078"
+        ,tags = "@BRIT-4077"
         ,monochrome=true
 
 )

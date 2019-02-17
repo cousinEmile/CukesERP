@@ -107,8 +107,6 @@ public class ImportSteps implements ApplicationConstants {
 
     @Then("manager should be able to see Repeat Until")
     public void manager_should_be_able_to_see_Repeat_Until() {
-        String repeat = pages.getImportPage().repeatUntil.getText();
-        System.out.println(repeat);
         Assert.assertEquals(pages.getImportPage().repeatUntil.getText(), REPEAT_UNTIL);
     }
 
@@ -121,8 +119,6 @@ public class ImportSteps implements ApplicationConstants {
 
     @Then("manager should be able to see End Date")
     public void manager_should_be_able_to_see_End_Date() {
-        String end  = pages.getImportPage().endDate.getText();
-        System.out.println("aa" +end);
         Assert.assertEquals(pages.getImportPage().endDate.getText(), END_DATE);
     }
 
@@ -131,9 +127,24 @@ public class ImportSteps implements ApplicationConstants {
         WebElement end = pages.getImportPage().endDate;
         BrowserUtils.waitForClickablility(end,4);
         end.click();
-
     }
 
+    @Then("manager should be able to see Active on the selective panel")
+    public void manager_should_be_able_to_see_Active_on_the_selective_panel() {
+        Assert.assertEquals(pages.getImportPage().active.getText(), ACTIVE);
+    }
+
+    @Then("manager clicks on Active")
+    public void manager_clicks_on_Active() {
+       WebElement active = pages.getImportPage().active;
+       BrowserUtils.waitForVisibility(active, 4);
+       active.click();
+    }
+
+    @Then("click on x button to delete Active")
+    public void click_on_x_button_to_delete_Active() {
+        pages.getImportPage().xButton.click();
+    }
 
 
 

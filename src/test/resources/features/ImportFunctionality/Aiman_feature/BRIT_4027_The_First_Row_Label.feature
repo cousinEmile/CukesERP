@@ -1,7 +1,7 @@
 @BRIT-4027
 Feature:
 
-  Scenario: The First Row Label
+  Scenario: The first row contains the label of the column
 
     Given user on the Landing page
     When user clicks BriteErpDemo button

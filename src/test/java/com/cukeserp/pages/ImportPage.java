@@ -38,7 +38,7 @@ public class ImportPage {
     @FindBy(xpath = "//a[@class='select2-choice select2-default']")
     public WebElement dontImportField;
 
-    @FindBy(xpath = "//li[@class='select2-results-dept-0 select2-result select2-result-selectable'][2]")
+    @FindBy(xpath = "(//ul[@class='select2-results']/li/div)[3]")
     public WebElement startDate;
 
     @FindBy(xpath = "(//ul[@class='select2-results']/li/div)[2]")
@@ -49,7 +49,6 @@ public class ImportPage {
 
     @FindBy(xpath = "(//div[@class='select2-search'])[5]/input")
     public WebElement search;
-
 
     @FindBy(xpath = "(//a[@class='select2-choice'])[5]/abbr")
     public WebElement xButton;
@@ -107,5 +106,10 @@ public class ImportPage {
 
     @FindBy(xpath = "//span[@class='oe_import_report_message']")
     public WebElement messageForSelect;
+
+    @FindBy(xpath = "(//li[@class='select2-results-dept-1 select2-result select2-result-selectable']/div)[1]")
+    public WebElement active;
+
+
 
 }

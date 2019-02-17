@@ -56,5 +56,6 @@ public interface ApplicationConstants {
     String START_DATE = "Start Date";
     String END_DATE = "End Date";
     String REPEAT_UNTIL = "Repeat Until";
+    String ACTIVE = "Active";
 
 }
