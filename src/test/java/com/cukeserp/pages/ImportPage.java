@@ -20,8 +20,14 @@ public class ImportPage {
     @FindBy(xpath = "(//input[@checked = 'checked'])[2]")
     public WebElement theFirstRowLabel;
 
+    @FindBy(xpath = "//label[@for='oe_import_has_header']")
+    public WebElement theFirstRowLabelText;
+
     @FindBy(id = "oe_import_advanced_mode")
     public WebElement showFields;
+
+    @FindBy(xpath = "//label[@for='oe_import_advanced_mode']")
+    public WebElement showFieldsText;
 
     @FindBy(xpath = "//input[@class='oe_import_file_show form-control']")
     public WebElement loadFileInputLine;
