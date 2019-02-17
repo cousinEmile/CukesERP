@@ -4,10 +4,13 @@ import com.cukeserp.utilities.ApplicationConstants;
 import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Driver;
 import com.cukeserp.utilities.Pages;
+import com.cukeserp.utilities.seleniumcucumber.ClickElementsMethods;
+import com.cukeserp.utilities.seleniumcucumber.SelectElementByType;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 public class ImportSteps implements ApplicationConstants {
     Pages pages = new Pages();
@@ -86,6 +89,7 @@ public class ImportSteps implements ApplicationConstants {
 
     @Then("manager clicks on Don't Import")
     public void manager_clicks_on_Don_t_Import() {
+        BrowserUtils.waitForVisibility(pages.getImportPage().messageForSelect, 4);
         pages.getImportPage().dontImportField.click();
     }
 
@@ -96,6 +100,20 @@ public class ImportSteps implements ApplicationConstants {
 
     @Then("manager clicks Start Date on the selective panel")
     public void manager_clicks_Start_Date_on_the_selective_panel() {
+        WebElement start = pages.getImportPage().startDate;
+        BrowserUtils.waitForClickablility(start,2);
+        start.click();
+    }
+
+    @Then("manager should be able to see Repeat Until")
+    public void manager_should_be_able_to_see_Repeat_Until() {
+       // Assert.assertEquals();
+        String repeat = pages.getImportPage().repeatUntil.getText();
+        System.out.println(repeat);
+    }
+
+    @Then("manager clicks Repeat Until on the selective panel")
+    public void manager_clicks_SRepeat_Until_on_the_selective_panel() {
 
     }
 

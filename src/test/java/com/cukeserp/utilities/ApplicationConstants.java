@@ -54,6 +54,7 @@ public interface ApplicationConstants {
     String THE_FIRST_ROW_CONTAINS = "The first row contains the label of the column";
     String SHOW_FIELDS_OF_RELATION = "Show fields of relation fields (advanced)";
     String START_DATE = "Start Date";
-
+    String END_DATE = "End Date";
+    String REPEAT_UNTIL = "Repeat Until";
 
 }

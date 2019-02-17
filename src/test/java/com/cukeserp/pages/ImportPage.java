@@ -35,11 +35,17 @@ public class ImportPage {
     @FindBy(xpath =  "//div[@class='oe_import_with_file oe_padding col-sm-12']/h2")
     public WebElement mapYourColumnsToImport;
 
-    @FindBy(xpath = "//div[@id='s2id_autogen5']/a")
+    @FindBy(xpath = "//a[@class='select2-choice select2-default']")
     public WebElement dontImportField;
 
     @FindBy(xpath = "//li[@class='select2-results-dept-0 select2-result select2-result-selectable'][2]")
     public WebElement startDate;
+
+    @FindBy(xpath = "(//div[@class='select2-result-label'])[2]")
+    public WebElement repeatUntil;
+
+    @FindBy(xpath = "(//div[@class='select2-result-label'])[1]")
+    public WebElement endDate;
 
     @FindBy(xpath = "(//div[@class='select2-search'])[5]/input")
     public WebElement search;
@@ -98,5 +104,7 @@ public class ImportPage {
     @FindBy(css = "div.alert.alert-danger.o_error_detail.collapse.in>pre:first-of-type")
     public WebElement uncaughtEventSettingsChanged;
 
+    @FindBy(xpath = "//span[@class='oe_import_report_message']")
+    public WebElement messageForSelect;
 
 }

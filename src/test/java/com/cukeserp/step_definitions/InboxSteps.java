@@ -33,6 +33,7 @@ public class InboxSteps {
 
     @When("manager clicks Calendar icon on Headers")
     public void manager_clicks_Calendar_icon_on_Headers() {
+        BrowserUtils.waitForClickablility(pages.getHeaderPage().calendar_button, 5);
         pages.getHeaderPage().calendar_button.click();
     }
 
