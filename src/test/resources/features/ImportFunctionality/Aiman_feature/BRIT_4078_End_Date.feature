@@ -1,6 +1,12 @@
-@BRIT-4078
-Feature:
+Feature: 
 
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# * Verify that "End Date" displayed andclickable
+  @BRIT-4078 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import - End Date
   Scenario: End Date
 
     Given user on the Landing page

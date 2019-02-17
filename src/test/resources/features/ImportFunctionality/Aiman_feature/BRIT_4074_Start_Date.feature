@@ -1,6 +1,12 @@
-@BRIT-4074
-Feature:
+Feature: 
 
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# * Verify that "Start Date" displayed and clickable
+  @BRIT-4074 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import - Start Date
   Scenario: Start Date
 
     Given user on the Landing page
@@ -24,4 +30,3 @@ Feature:
     Then manager clicks on Don't Import
     And manager should be able to see Start Date
     Then manager clicks Start Date on the selective panel
-

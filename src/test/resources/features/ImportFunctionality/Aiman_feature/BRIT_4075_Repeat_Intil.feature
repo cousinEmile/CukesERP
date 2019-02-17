@@ -1,6 +1,12 @@
-@BRIT-4075
 Feature:
 
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# * Verify that "Repeat Until"  displayed and clickable
+  @BRIT-4075 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import - Repeat Until
   Scenario: Repeat Until
 
     Given user on the Landing page

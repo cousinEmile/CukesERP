@@ -1,6 +1,12 @@
-@BRIT-4027
-Feature:
+Feature: 
 
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# *  Verify that "The first row contains the label of the column" displayed and clickable
+  @BRIT-4027 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import -The first row contains the label of the column
   Scenario: The first row contains the label of the column
 
     Given user on the Landing page
@@ -24,16 +30,4 @@ Feature:
     Then manager should be able to see The first row contains the label of the column Checkbox
     And verify Checkbox The first row contains the label of the column is selected by default
     Then manager clicks The first row contains the label of the column Checkbox
-
-
-
-
-
-
-
-
-
-
-
-
-
+		

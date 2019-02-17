@@ -1,7 +1,13 @@
-@BRIT-4077
-Feature:
+Feature: 
 
-  Scenario: Default
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# * Change back import option for default
+  @BRIT-4077 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import - Import by Default
+  Scenario: Import by Default
     Given user on the Landing page
     When user clicks BriteErpDemo button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
