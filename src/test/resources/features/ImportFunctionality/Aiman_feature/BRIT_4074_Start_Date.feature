@@ -3,17 +3,25 @@ Feature:
 
   Scenario: Start Date
 
-    Given user on the First page
+    Given user on the Landing page
     When user clicks BriteErpDemo button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
 
     When manager clicks Calendar icon on Headers
-    Then Calendar page Title should be displayed "Meetings - Odoo"
-
-    When hover to the "List" option on the right top corner
-    Then manager should be able to see list "List" button
+    Then manager should be able to see List button
     And manager clicks List button
-    Then List page Title should be displayed "Meetings - Odoo"
-
     Then manager clicks Import button
-    Then Import page Title should be displayed "Import a File - Odoo"
+
+    When manager should be able to click Load File Button and input "/uploaded_files/utility.xlsx" to the Upload line
+    Then "utility.xlsx" should be displayed on the Input Line
+    And manager should be able to see Map your columns to import Message
+
+    Then manager should be able to see Show fields of relation fields Checkbox
+    And verify Checkbox Show fields of relation fields is selected by default
+    Then manager clicks Show fields of relation fields Checkbox
+
+    When Show fields of relation fields Checkbox is not selected
+    Then manager clicks on Don't Import
+    And manager should be able to see Start Date
+    Then manager clicks Start Date on the selective panel
+

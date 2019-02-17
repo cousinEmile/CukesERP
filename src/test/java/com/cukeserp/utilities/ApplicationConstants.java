@@ -53,6 +53,7 @@ public interface ApplicationConstants {
     String MINUS_ICON_CLASS = "o_searchview_more fa fa-search-minus";
     String THE_FIRST_ROW_CONTAINS = "The first row contains the label of the column";
     String SHOW_FIELDS_OF_RELATION = "Show fields of relation fields (advanced)";
+    String START_DATE = "Start Date";
 
 
 }

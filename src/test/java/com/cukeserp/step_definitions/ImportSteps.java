@@ -79,6 +79,27 @@ public class ImportSteps implements ApplicationConstants {
         pages.getImportPage().showFields.click();
     }
 
+    @When("Show fields of relation fields Checkbox is not selected")
+    public void show_fields_of_relation_fields_Checkbox_is_not_selected() {
+        Assert.assertFalse(pages.getImportPage().showFields.isSelected());
+    }
+
+    @Then("manager clicks on Don't Import")
+    public void manager_clicks_on_Don_t_Import() {
+        pages.getImportPage().dontImportField.click();
+    }
+
+    @Then("manager should be able to see Start Date")
+    public void manager_should_be_able_to_see_Start_Date() {
+        Assert.assertEquals(pages.getImportPage().startDate.getText(), START_DATE);
+    }
+
+    @Then("manager clicks Start Date on the selective panel")
+    public void manager_clicks_Start_Date_on_the_selective_panel() {
+
+    }
+
+
 
 }
 

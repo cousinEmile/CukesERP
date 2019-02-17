@@ -38,6 +38,9 @@ public class ImportPage {
     @FindBy(xpath = "//div[@id='s2id_autogen5']/a")
     public WebElement dontImportField;
 
+    @FindBy(xpath = "//li[@class='select2-results-dept-0 select2-result select2-result-selectable'][2]")
+    public WebElement startDate;
+
     @FindBy(xpath = "(//div[@class='select2-search'])[5]/input")
     public WebElement search;
 
