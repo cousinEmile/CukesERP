@@ -107,15 +107,33 @@ public class ImportSteps implements ApplicationConstants {
 
     @Then("manager should be able to see Repeat Until")
     public void manager_should_be_able_to_see_Repeat_Until() {
-       // Assert.assertEquals();
         String repeat = pages.getImportPage().repeatUntil.getText();
         System.out.println(repeat);
+        Assert.assertEquals(pages.getImportPage().repeatUntil.getText(), REPEAT_UNTIL);
     }
 
     @Then("manager clicks Repeat Until on the selective panel")
-    public void manager_clicks_SRepeat_Until_on_the_selective_panel() {
+    public void manager_clicks_Repeat_Until_on_the_selective_panel() {
+        WebElement repeat = pages.getImportPage().repeatUntil;
+        BrowserUtils.waitForClickablility(repeat,3);
+        repeat.click();
+    }
+
+    @Then("manager should be able to see End Date")
+    public void manager_should_be_able_to_see_End_Date() {
+        String end  = pages.getImportPage().endDate.getText();
+        System.out.println("aa" +end);
+        Assert.assertEquals(pages.getImportPage().endDate.getText(), END_DATE);
+    }
+
+    @Then("manager clicks End Date on the selective panel")
+    public void manager_clicks_End_Date_on_the_selective_panel() {
+        WebElement end = pages.getImportPage().endDate;
+        BrowserUtils.waitForClickablility(end,4);
+        end.click();
 
     }
+
 
 
 

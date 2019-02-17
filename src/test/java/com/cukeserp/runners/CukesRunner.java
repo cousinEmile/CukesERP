@@ -22,8 +22,8 @@ import java.util.concurrent.TimeUnit;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features/ImportFunctionality/Aiman_feature",
         glue = "com.cukeserp.step_definitions"
-        ,dryRun = true
-        ,tags = "@BRIT-4075"
+        ,dryRun = false
+        ,tags = "@BRIT-4078"
         ,monochrome=true
 
 )

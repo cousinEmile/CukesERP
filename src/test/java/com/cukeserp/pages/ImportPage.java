@@ -41,14 +41,15 @@ public class ImportPage {
     @FindBy(xpath = "//li[@class='select2-results-dept-0 select2-result select2-result-selectable'][2]")
     public WebElement startDate;
 
-    @FindBy(xpath = "(//div[@class='select2-result-label'])[2]")
+    @FindBy(xpath = "(//ul[@class='select2-results']/li/div)[2]")
     public WebElement repeatUntil;
 
-    @FindBy(xpath = "(//div[@class='select2-result-label'])[1]")
+    @FindBy(xpath = "(//ul[@class='select2-results']/li/div)[1]")
     public WebElement endDate;
 
     @FindBy(xpath = "(//div[@class='select2-search'])[5]/input")
     public WebElement search;
+
 
     @FindBy(xpath = "(//a[@class='select2-choice'])[5]/abbr")
     public WebElement xButton;
