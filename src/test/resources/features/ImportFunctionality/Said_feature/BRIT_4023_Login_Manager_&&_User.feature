@@ -5,14 +5,19 @@ Feature:
    # Pre-Condition: Environment is up and running
 
     Given user on the Landing page
-    Then Landing page Title should be displayed "Odoo"
-    When user clicks BriteErpDemo button
-    Then Login page Title should be displayed "Login | Website localhost"
+    Then "Landing Page" Title should be displayed "Odoo"
+    When user clicks "BriteErpDemo" button
+    Then "Login Page" Title should be displayed "Login | Website localhost"
     When "<user>" logs in using "<email>" and "<password>"
-    Then Inbox page Title should be displayed "#Inbox - Odoo"
-    And "<user>" name should be "<actualUser>"
+    Then "Inbox Page" Title should be displayed "#Inbox - Odoo"
+    And  Actual user Name should be displayed "<username>"
 
     Examples:
-      | user               | email         | password    | actualUser         |
-      | InventoryManager 2 | inm2@info.com | alsfuh7we68 | InventoryManager 2 |
-      | InventoryUser4     | in_4@info.com | alsfuh7we74 | InventoryUser4     |
+      | username               | email                           | password    |
+      | InventoryManager 2     | inm2@info.com                   | alsfuh7we68 |
+      | InventoryUser4         | in_4@info.com                   | alsfuh7we74 |
+      | Lunch_Invoicing_User   | Lunch_Invoicing_User@info.com   | LD686gfX26  |
+      | Lunch_InvoicingManager | Lunch_InvoicingManager@info.com | LD686gfX22  |
+      | InventoryManager       | in@info.com                     | alsfuh7we67 |
+      | InventoryManager5      | inm5@info.com                   | trt332qWW12 |
+      | InventoryManager6      | inm6@info.com                   | trt332qWW13 |

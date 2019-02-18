@@ -5,23 +5,27 @@ Feature:
 	#
 	#Acceptance Criteria:
 	# * Change back import option for default
-  @BRIT-4077 @Calendar @Mclean
-  Scenario: Cucumber - Calendar Import - Import by Default
-  Scenario: Import by Default
+  @BRIT-4028 @Calendar @Mclean
+  Scenario: Cucumber - Calendar / Import actions - Import Icon (Manager)
+
     Given user on the Landing page
-    When user clicks BriteErpDemo button
+    When user clicks "BriteErpDemo" button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
+    When manager clicks "Calendar" button
+    And manager clicks "List" button
 
-    When manager clicks Calendar icon on Headers
-    Then manager should be able to see List button
-    And manager clicks List button
-    Then manager clicks Import button
+    And manager clicks "Import on Calendar Page" button
 
-    When manager should be able to click Load File Button and input "/uploaded_files/utility.xlsx" to the Upload line
-    Then "utility.xlsx" should be displayed on the Input Line
-    And manager should be able to see Map your columns to import Message
+    Then the manager should be able to see "Import" button
+    When click Import button
+    Then Import page should be displayed with "actualTitle"
 
-    Then manager clicks on Don't Import
-    And manager should be able to see Active on the selective panel
-    Then manager clicks on Active
-    And click on x button to delete Active
+    Given user on the First page
+    When user clicks Brite Erp Demo
+    Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
+    Then click Calendar icon on Headers
+    Then click List button
+
+    Then the manager should be able to see "Import" button
+    When click Import button
+    Then Import page should be displayed with "actualTitle"

@@ -17,8 +17,9 @@ public class InboxPage {
     @FindBy (css = "div.o_control_panel>ol>li")
     public WebElement inboxBreadCrumb;
 
-
     @FindBy (xpath = "//li[@style='display: block;']/a/span")
     public List<WebElement> allHeaders;
 
+    @FindBy (css = ".oe_topbar_name")
+    public WebElement actualUsername;
 }

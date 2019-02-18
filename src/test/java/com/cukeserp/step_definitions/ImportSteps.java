@@ -6,6 +6,8 @@ import com.cukeserp.utilities.Driver;
 import com.cukeserp.utilities.Pages;
 import com.cukeserp.utilities.seleniumcucumber.ClickElementsMethods;
 import com.cukeserp.utilities.seleniumcucumber.SelectElementByType;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.But;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
@@ -26,19 +28,14 @@ public class ImportSteps implements ApplicationConstants {
         Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("placeholder"), noFileChoosen);
     }
 
-    @Then("manager should be able to Type {string} to the Upload line - Fail")
+    @But("manager should be able to Type {string} to the Upload line - Fail")
     public void manager_should_be_able_to_Type_to_the_Upload_line_Fail(String inputFile) {
         pages.getImportPage().loadFileInputLine.sendKeys(System.getProperty("user.dir") + inputFile + Keys.ENTER);
     }
 
-    @Then("manager should be able to see Uploaded file {string} - Fail")
+    @And("manager should be able to see Uploaded file {string} - Fail")
     public void manager_should_be_able_to_see_Uploaded_file_Fail(String utilityXlsx) {
         Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("value"), utilityXlsx);
-    }
-
-    @When("manager should be able to click Load File Button and input {string} to the Upload line")
-    public void manager_should_be_able_to_click_Load_File_Button_and_input_to_the_Upload_line(String loadFile) {
-        pages.getImportPage().loadFile.sendKeys(System.getProperty("user.dir") + loadFile);
     }
 
     @Then("{string} should be displayed on the Input Line")
@@ -46,11 +43,7 @@ public class ImportSteps implements ApplicationConstants {
         Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("value"), utilityXlsx);
     }
 
-    @Then("manager should be able to see Map your columns to import Message")
-    public void manager_should_be_able_to_see_Map_your_columns_to_import_Message() {
-        BrowserUtils.waitForVisibility(pages.getImportPage().mapYourColumnsToImport, 5);
-        Assert.assertEquals(pages.getImportPage().mapYourColumnsToImport.getText(), MAP_YOUR_COULMS_TO_IMPORT);
-    }
+
 
     @Then("manager should be able to see The first row contains the label of the column Checkbox")
     public void manager_should_be_able_to_see_The_first_row_contains_the_label_of_the_column_Checkbox() {
@@ -85,12 +78,6 @@ public class ImportSteps implements ApplicationConstants {
     @When("Show fields of relation fields Checkbox is not selected")
     public void show_fields_of_relation_fields_Checkbox_is_not_selected() {
         Assert.assertFalse(pages.getImportPage().showFields.isSelected());
-    }
-
-    @Then("manager clicks on Don't Import")
-    public void manager_clicks_on_Don_t_Import() {
-        BrowserUtils.waitForVisibility(pages.getImportPage().messageForSelect, 4);
-        pages.getImportPage().dontImportField.click();
     }
 
     @Then("manager should be able to see Start Date")
@@ -129,22 +116,14 @@ public class ImportSteps implements ApplicationConstants {
         end.click();
     }
 
-    @Then("manager should be able to see Active on the selective panel")
-    public void manager_should_be_able_to_see_Active_on_the_selective_panel() {
-        Assert.assertEquals(pages.getImportPage().active.getText(), ACTIVE);
+
+
+    @When("manager clicks to the Load File Button and input {string}")
+    public void manager_clicks_to_the_Load_File_Button_and_input(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
     }
 
-    @Then("manager clicks on Active")
-    public void manager_clicks_on_Active() {
-       WebElement active = pages.getImportPage().active;
-       BrowserUtils.waitForVisibility(active, 4);
-       active.click();
-    }
-
-    @Then("click on x button to delete Active")
-    public void click_on_x_button_to_delete_Active() {
-        pages.getImportPage().xButton.click();
-    }
 
 
 

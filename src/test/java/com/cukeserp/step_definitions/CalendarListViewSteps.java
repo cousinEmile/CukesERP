@@ -17,25 +17,10 @@ import java.applet.AppletContext;
 public class CalendarListViewSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
-    @Then("List page Title should be displayed {string}")
-    public void list_page_Title_should_be_displayed(String actualTitle) {
-        Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
-    }
-
-    @Then("url is {string}")
-    public void url_is(String actualURL) {
-        BrowserUtils.waitForURL(actualURL, 5);
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), actualURL);
-    }
-
     @Then("manager should be able to see Import button")
     public void manager_should_be_able_to_see_Import_button() {
         Assert.assertEquals(pages.getCalendarListViewPage().import_button.getText(),IMPORT_BUTTON);
     }
 
-    @When("manager clicks Import button")
-    public void manager_clicks_Import_button() {
-     pages.getCalendarListViewPage().import_button.click();
-    }
 
 }

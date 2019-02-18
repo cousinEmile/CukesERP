@@ -11,13 +11,13 @@ Feature:
 		# Pre-Condition: Environment is up and running.
 
     Given user on the Landing page
-    When user clicks BriteErpDemo button
+    When user clicks "BriteErpDemo" button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then manager clicks Calendar icon on Headers
-    Then manager clicks List button
-    When manager clicks Import button
+    Then manager clicks "Calendar" button
+    Then manager clicks "List" button
+    When manager clicks "Import on Calendar Page" button
 
-    When manager clicks to the Load File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
+    When manager clicks "Load File" Button and sendkeys "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
 
-    Then manager should be able to see Reload file button
-    And  manager should be able to click the Reload File Button and input "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\EmployeesTestData.xlsx" to the Upload line
+#    Then manager should be able to see "Reload file" button you need to work on it
+    And  manager cliks  "Reload File" Button and sendkeys "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\EmployeesTestData.xlsx"
