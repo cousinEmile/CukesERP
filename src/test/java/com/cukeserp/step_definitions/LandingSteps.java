@@ -9,18 +9,10 @@ import org.junit.Assert;
 public class LandingSteps extends BrowserUtils implements ApplicationConstants {
     Pages pages = new Pages();
 
-    @Given("user on the Landing page")
-    public void user_on_the_Landing_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperties("url"));
+    @Given("I open {string} url")
+    public void i_open_url(String url) {
+        Driver.getDriver().get(url);
     }
-
-    @When("user clicks {string} button")
-    public void user_clicks_button(String actulButton) {
-        waitForClickablility(pages.getLandingPage().BriteErpDemo_button,10);
-        pages.getLandingPage().BriteErpDemo_button.click();
-    }
-
-
 
 
 }

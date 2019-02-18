@@ -87,7 +87,7 @@ public class ImportPage {
     public WebElement youMustConfigureAtLeastOneFieldToImportErrorMessage;
 
     @FindBy(xpath = "(//div[@class='modal-dialog modal-lg']//div//div)[1]//h4")
-    public WebElement errorMessageOddo;
+    public WebElement odooClientErrorMessage;
 
     @FindBy(xpath =  "(//div[@class='modal-dialog modal-lg']//div//div)[5]//button//span")
     public WebElement errorMessageOkButton;
@@ -110,6 +110,8 @@ public class ImportPage {
     @FindBy(xpath = "(//li[@class='select2-results-dept-1 select2-result select2-result-selectable']/div)[1]")
     public WebElement active;
 
+    @FindBy(xpath ="//div[@class='col-sm-12']//a" )
+    public WebElement helpButton;
 
 
 }

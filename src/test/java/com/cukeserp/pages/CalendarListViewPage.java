@@ -22,9 +22,6 @@ public class CalendarListViewPage {
     @FindBy(css = "button.fa.fa-chevron-left.btn.btn-icon.o_pager_previous")
     public WebElement nextPage_button;
 
-    @FindBy(xpath ="//div[@class='col-sm-12']//a" )
-    public WebElement helpButton;
-
     @FindBy(xpath ="//button[@data-original-title='List']" )
     public WebElement list;
 

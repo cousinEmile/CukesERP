@@ -17,10 +17,5 @@ import java.applet.AppletContext;
 public class CalendarListViewSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
-    @Then("manager should be able to see Import button")
-    public void manager_should_be_able_to_see_Import_button() {
-        Assert.assertEquals(pages.getCalendarListViewPage().import_button.getText(),IMPORT_BUTTON);
-    }
-
 
 }

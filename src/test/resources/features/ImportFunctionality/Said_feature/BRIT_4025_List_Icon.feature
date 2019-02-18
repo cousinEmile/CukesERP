@@ -10,15 +10,15 @@ Feature:
   Scenario: Cucumber - Calendar / Import actions - List Icon (Manager)
 		# Pre-Condition: Environment is up and running.
 
-    Given user on the Landing page
-    When user clicks "BriteErpDemo" button
-    Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
+    Given I open "http://52.39.162.23" url
+    When "I" clicks "BriteErpDemo" button
+    Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
+    Then "Manager" clicks "Calendar" button
 
-    When manager clicks "Calendar" button
     Then "Calendar page" Title should be displayed "Meetings - Odoo"
     When hover to the List option on the right top corner
-    Then manager should be able to see "List" button
-    And manager clicks "List" button
+    Then "Manager" should be able to see "List" button
+    And "Manager" clicks "List" button
     Then "List page" Title should be displayed "Meetings - Odoo"
     And url is "http://52.39.162.23/web?#view_type=list&model=calendar.event&menu_id=120&action=136"
 

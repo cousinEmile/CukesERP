@@ -16,22 +16,35 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
     @Then("{string} Title should be displayed {string}")
     public void title_should_be_displayed(String Title, String actualTitle) {
-        BrowserUtils.waitUntilTitleEquals(10, actualTitle);
+        waitUntilTitleEquals(10, actualTitle);
         Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
+//        System.out.println(Driver.getDriver().getTitle());
     }
 
     @Then("url is {string}")
     public void url_is(String actualURL) {
-        BrowserUtils.waitForURL(actualURL, 10);
+        waitForURL(actualURL, 10);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), actualURL);
+        //  System.out.println(Driver.getDriver().getCurrentUrl());
     }
 
+    @When("{string} switchs page to {string}")
+    public void switchs_page_to(String actualUserName, String secondPage) {
+        switchToWindow(secondPage);
+    }
+
+
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    @Then("manager clicks {string} button")
-    public void manager_clicks_button(String actulButton) {
 
-        switch (actulButton) {
+    @Then("{string} clicks {string} button")
+    public void clicks_button(String actualUserName, String actualButton) {
 
+        switch (actualButton) {
+
+            case "BriteErpDemo":
+                waitForClickablility(pages.getLandingPage().BriteErpDemo_button, 10);
+                pages.getLandingPage().BriteErpDemo_button.click();
+                break;
             case "Calendar":
                 waitForClickablility(pages.getHeaderPage().calendar_button, 10);
                 pages.getHeaderPage().calendar_button.click();
@@ -56,37 +69,44 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 waitForClickablility(pages.getImportPage().xButton, 10);
                 pages.getImportPage().xButton.click();
                 break;
-            case "7":
-//                waitForClickablility(pages, 10);
-
+            case "Help":
+                waitForClickablility(pages.getImportPage().helpButton, 10);
+                pages.getImportPage().helpButton.click();
                 break;
-            case "8":
-//                waitForClickablility(pages, 10);
-
+            case "Test Import":
+                waitForClickablility(pages.getImportPage().testImportButton, 10);
+                pages.getImportPage().testImportButton.click();
                 break;
-            case "9":
-//                waitForClickablility(pages, 10);
-
+            case "Import on Import a File Page":
+                waitForClickablility(pages.getImportPage().importButtonToImportFile, 10);
+                pages.getImportPage().importButtonToImportFile.click();
                 break;
-            case "10":
-//                waitForClickablility(pages, 10);
-
+            case "Cancel":
+                waitForClickablility(pages.getImportPage().cancelButton, 10);
+                pages.getImportPage().cancelButton.click();
                 break;
-            case "11":
-//                waitForClickablility(pages, 10);
-
+            case "The first row contains the label of the column":
+                waitForClickablility(pages.getImportPage().theFirstRowLabel, 10);
+                pages.getImportPage().theFirstRowLabel.click();
                 break;
-            case "12":
-//                waitForClickablility(pages, 10);
-
+            case "Copy the full error to clipboard":
+                waitForClickablility(pages.getImportPage().copyTheFullErrorToClipboardButton, 10);
+                pages.getImportPage().copyTheFullErrorToClipboardButton.click();
                 break;
-
+            case "see details":
+                waitForClickablility(pages.getImportPage().seeDetailsButton,10);
+                pages.getImportPage().seeDetailsButton.click();
+                break;
+            case "Ok":
+                waitForClickablility(pages.getImportPage().seeDetailsButton,10);
+                pages.getImportPage().errorMessageOkButton.click();
+                break;
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    @Then("manager should be able to see {string} button")
-    public void manager_should_be_able_to_see_button(String actualButton) {
+    @Then("{string} should be able to see {string} button")
+    public void should_be_able_to_see_button(String actualUserName, String actualButton) {
         switch (actualButton) {
             case "List":
                 waitForVisibility(pages.getCalendar().listView, 10);
@@ -102,19 +122,94 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 break;
             case "Reload file":
                 waitForVisibility(pages.getImportPage().reloadFile, 10);
-                Assert.assertEquals(pages.getImportPage().reloadFile.getText(),actualButton);
+                Assert.assertEquals(pages.getImportPage().reloadFile.getText(), actualButton);
                 break;
-            case "e":
-//                waitForVisibility(, 10);
+            case "Help":
+                waitForVisibility(pages.getImportPage().helpButton, 10);
+                Assert.assertEquals(pages.getImportPage().helpButton.getText(), actualButton);
+                break;
+            case "Test Import":
+                waitForVisibility(pages.getImportPage().testImportButton, 10);
+                Assert.assertEquals(pages.getImportPage().testImportButton.getText(), actualButton);
+                break;
+            case "Import on Import a File Page":
+                waitForVisibility(pages.getImportPage().importButtonToImportFile, 10);
+                Assert.assertEquals(pages.getImportPage().importButtonToImportFile.getText(), ApplicationConstants.IMPORT_BUTTON);
+                break;
+            case "Cancel":
+                waitForVisibility(pages.getImportPage().cancelButton, 10);
+                Assert.assertEquals(pages.getImportPage().cancelButton.getText(), actualButton);
+                break;
+            case "Copy the full error to clipboard":
+                waitForVisibility(pages.getImportPage().copyTheFullErrorToClipboardButton,10);
+                Assert.assertEquals(pages.getImportPage().copyTheFullErrorToClipboardButton.getText(),actualButton);
+                break;
+            case "see details":
+                waitForVisibility(pages.getImportPage().seeDetailsButton,10);
+                wait(3);
+                System.out.println(pages.getImportPage().seeDetailsButton.getText());
+                Assert.assertEquals(pages.getImportPage().seeDetailsButton.getText(),actualButton);
+                break;
+            case "Ok":
+                waitForVisibility(pages.getImportPage().errorMessageOkButton,10);
+                Assert.assertEquals(pages.getImportPage().errorMessageOkButton.getText(),actualButton);
+                break;
 
-                break;
 
         }
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    @When("manager sendKeys {string} in {string}")
-    public void manager_sendKeys_in(String loadFile, String buttonName) {
+    @Then("{string} should be able to see {string} Message")
+    public void should_be_able_to_see_Message(String actualUserName, String actualMessage) {
+
+        switch (actualMessage) {
+            case "Map your columns to import":
+                waitForVisibility(pages.getImportPage().mapYourColumnsToImport, 10);
+                Assert.assertEquals(pages.getImportPage().mapYourColumnsToImport.getText(), actualMessage);
+                break;
+            case "How to import data into Odoo":
+                waitForVisibility(pages.getHelpPage().howToImportDataToOdoMessage, 10);
+                Assert.assertEquals(pages.getHelpPage().howToImportDataToOdoMessage.getText(), actualMessage);
+                break;
+            case "You must configure at least one field to import":
+                waitForVisibility(pages.getImportPage().youMustConfigureAtLeastOneFieldToImportErrorMessage, 10);
+                wait(1);
+                Assert.assertEquals(pages.getImportPage().youMustConfigureAtLeastOneFieldToImportErrorMessage.getText(), actualMessage);
+                break;
+            case "Odoo Client Error":
+                waitForVisibility(pages.getImportPage().odooClientErrorMessage, 10);
+                Assert.assertEquals(pages.getImportPage().odooClientErrorMessage.getText(), actualMessage);
+                break;
+            case "Please use the copy button to report the error to your support service.":
+                waitForVisibility(pages.getImportPage().pleasuUseCopyButtonMessage, 10);
+                Assert.assertEquals(pages.getImportPage().pleasuUseCopyButtonMessage.getText(), actualMessage);
+                break;
+            case "Uncaught event settings_changed inappropriate in current state previewing":
+                waitForVisibility(pages.getImportPage().uncaughtEventSettingsChanged,10);
+                Assert.assertEquals(pages.getImportPage().uncaughtEventSettingsChanged.getText(),actualMessage);
+                break;
+
+        }
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    @Then("{string} should be able to see {string} message by default in {string}")
+    public void should_be_able_to_see_message_by_default_in(String actualUserName, String actualMessage, String buttonName) {
+
+        switch (buttonName) {
+            case "Input line":
+                Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("placeholder"), actualMessage);
+                break;
+
+
+        }
+    }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    @When("{string} sendKeys {string} in {string}")
+    public void sendKeys_in(String actualUserName, String loadFile, String buttonName) {
 
         switch (buttonName) {
             case "Load File":
@@ -129,32 +224,4 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
         }
     }
-
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    @Then("manager should be able to see {string} Message")
-    public void manager_should_be_able_to_see_Message(String actualMessage) {
-
-        switch (actualMessage) {
-            case "Map your columns to import":
-                BrowserUtils.waitForVisibility(pages.getImportPage().mapYourColumnsToImport, 10);
-                Assert.assertEquals(pages.getImportPage().mapYourColumnsToImport.getText(), actualMessage);
-                break;
-        }
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    @Then("manager should be able to see {string} message by default in {string}")
-    public void manager_should_be_able_to_see_message_by_default_in(String actualMessage, String buttonName) {
-
-        switch (buttonName) {
-            case "Input line":
-                Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("placeholder"), actualMessage);
-                break;
-
-
-        }
-    }
-
-
 }

@@ -10,14 +10,13 @@ Feature:
   Scenario: Cucumber - Calendar / Import actions - Reloading File, FAIL (Manager)
 		# Pre-Condition: Environment is up and running.
 
-    Given user on the Landing page
-    When user clicks "BriteErpDemo" button
-    Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then manager clicks "Calendar" button
-    Then manager clicks "List" button
-    When manager clicks "Import on Calendar Page" button
+    Given I open "http://52.39.162.23" url
+    When "I" clicks "BriteErpDemo" button
+    Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
+    Then "Manager" clicks "Calendar" button
+    Then "Manager" clicks "List" button
+    When "Manager" clicks "Import on Calendar Page" button
+    When "Manager" sendKeys "/uploaded_files/utility.xlsx" in "Load File"
 
-    When manager sendKeys "/uploaded_files/utility.xlsx" in "Load File"
-
-    Then manager should be able to see "Reload File" button
-    And  manager sendKeys "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\EmployeesTestData.xlsx" in "Reload File"
+    Then "Manager" should be able to see "Reload File" button
+    And  "Manager" sendKeys "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\EmployeesTestData.xlsx" in "Reload File"

@@ -10,14 +10,14 @@ Feature:
   Scenario: Cucumber - Calendar / Import actions - Input line, FAIL (Manager)
 		# Pre-Condition: Environment is up and running.
 
-    Given user on the Landing page
-    When user clicks "BriteErpDemo" button
-    Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then manager clicks "Calendar" button
-    Then manager clicks "List" button
-    When manager clicks "Import on Calendar Page" button
+    Given I open "http://52.39.162.23" url
+    When "I" clicks "BriteErpDemo" button
+    Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
+    Then "Manager" clicks "Calendar" button
+    Then "Manager" clicks "List" button
+    When "Manager" clicks "Import on Calendar Page" button
 
-    Then manager should be able to see "No file chosen..." message by default in "Input line"
-    And manager sendKeys "/uploaded_files/utility.xlsx" in "Input line"
+    Then "Manager" should be able to see "No file chosen..." message by default in "Input line"
+    And "Manager" sendKeys "/uploaded_files/utility.xlsx" in "Input line"
     But "utility.xlsx" should be displayed on the Input Line
 #    fail

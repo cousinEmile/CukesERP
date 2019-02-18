@@ -11,7 +11,7 @@ public class HelpPage {
         PageFactory.initElements( Driver.getDriver(), this);
     }
 
-    @FindBy (xpath = "//div[@class='container text-center']//h1" )
+    @FindBy (css = "h1:last-of-type" )
     public WebElement howToImportDataToOdoMessage;
 
 

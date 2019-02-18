@@ -8,11 +8,11 @@ Feature:
   @BRIT-4028 @Calendar @Mclean
   Scenario: Cucumber - Calendar / Import actions - Import Icon (Manager)
 
-    Given user on the Landing page
-    When user clicks "BriteErpDemo" button
-    Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    When manager clicks "Calendar" button
-    And manager clicks "List" button
-    Then manager should be able to see "Import" button
-    When manager clicks "Import on Calendar Page" button
+    Given I open "http://52.39.162.23" url
+    When "" clicks "BriteErpDemo" button
+    Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
+    Then "Manager" clicks "Calendar" button
+    Then "Manager" clicks "List" button
+    Then "Manager" should be able to see "Import" button
+    When "Manager" clicks "Import on Calendar Page" button
     Then "Import page" Title should be displayed "Import a File - Odoo"
