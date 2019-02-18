@@ -16,7 +16,6 @@ Feature:
 
     When manager clicks "Calendar" button
     Then "Calendar page" Title should be displayed "Meetings - Odoo"
-
     When hover to the List option on the right top corner
     Then manager should be able to see "List" button
     And manager clicks "List" button

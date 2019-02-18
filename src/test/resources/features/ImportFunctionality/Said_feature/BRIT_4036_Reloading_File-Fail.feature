@@ -17,7 +17,7 @@ Feature:
     Then manager clicks "List" button
     When manager clicks "Import on Calendar Page" button
 
-    When manager clicks "Load File" Button and sendkeys "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\utility.xlsx"
+    When manager sendKeys "/uploaded_files/utility.xlsx" in "Load File"
 
-#    Then manager should be able to see "Reload file" button you need to work on it
-    And  manager cliks  "Reload File" Button and sendkeys "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\EmployeesTestData.xlsx"
+    Then manager should be able to see "Reload File" button
+    And  manager sendKeys "C:\Users\saidy\IdeaProjects\Cukes_ERP\uploaded_files\EmployeesTestData.xlsx" in "Reload File"

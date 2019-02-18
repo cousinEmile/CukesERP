@@ -7,6 +7,7 @@ import com.cukeserp.utilities.Pages;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 import java.util.Map;
 
@@ -82,7 +83,7 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
         }
     }
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     @Then("manager should be able to see {string} button")
     public void manager_should_be_able_to_see_button(String actualButton) {
@@ -95,16 +96,16 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 waitForVisibility(pages.getImportPage().active, 10);
                 Assert.assertEquals(pages.getImportPage().active.getText(), actualButton);
                 break;
-            case "c":
-//                waitForVisibility(, 10);
-
+            case "Import":
+                waitForVisibility(pages.getCalendarListViewPage().import_button, 10);
+                Assert.assertEquals(pages.getCalendarListViewPage().import_button.getText(), actualButton);
                 break;
-            case "d":
-//                waitForVisibility(, 10)
-
+            case "Reload file":
+                waitForVisibility(pages.getImportPage().reloadFile, 10);
+                Assert.assertEquals(pages.getImportPage().reloadFile.getText(),actualButton);
                 break;
             case "e":
-//                waitForVisibility(, 10)
+//                waitForVisibility(, 10);
 
                 break;
 
@@ -116,24 +117,44 @@ public class UniversalStepDefinitions extends BrowserUtils {
     public void manager_sendKeys_in(String loadFile, String buttonName) {
 
         switch (buttonName) {
-            case "Upload line":
+            case "Load File":
                 pages.getImportPage().loadFile.sendKeys(System.getProperty("user.dir") + loadFile);
                 break;
-
+            case "Input line":
+                pages.getImportPage().loadFileInputLine.sendKeys(System.getProperty("user.dir") + loadFile + Keys.ENTER);
+                break;
+            case "Reload File":
+                pages.getImportPage().reloadFile.sendKeys(System.getProperty("user.dir") + loadFile + Keys.ENTER);
+                break;
 
         }
     }
 
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    @Then("manager should be able to {string} Message")
-    public void manager_should_be_able_to_Message(String actualMessage) {
+    @Then("manager should be able to see {string} Message")
+    public void manager_should_be_able_to_see_Message(String actualMessage) {
 
         switch (actualMessage) {
-            case "see Map your columns to import":
+            case "Map your columns to import":
                 BrowserUtils.waitForVisibility(pages.getImportPage().mapYourColumnsToImport, 10);
                 Assert.assertEquals(pages.getImportPage().mapYourColumnsToImport.getText(), actualMessage);
                 break;
         }
     }
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    @Then("manager should be able to see {string} message by default in {string}")
+    public void manager_should_be_able_to_see_message_by_default_in(String actualMessage, String buttonName) {
+
+        switch (buttonName) {
+            case "Input line":
+                Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("placeholder"), actualMessage);
+                break;
+
+
+        }
+    }
+
 
 }

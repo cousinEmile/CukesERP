@@ -17,20 +17,8 @@ import org.openqa.selenium.WebElement;
 public class ImportSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
-    @Then("Import page Title should be displayed {string}")
-    public void import_page_Title_should_be_displayed(String actualTitle) {
-        BrowserUtils.waitUntilTitleEquals(10, actualTitle);
-        Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
-    }
-
-    @Then("manager should be able to see Input line with {string} by default")
-    public void manager_should_be_able_to_see_Input_line_with_by_default(String noFileChoosen) {
-        Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("placeholder"), noFileChoosen);
-    }
-
     @But("manager should be able to Type {string} to the Upload line - Fail")
     public void manager_should_be_able_to_Type_to_the_Upload_line_Fail(String inputFile) {
-        pages.getImportPage().loadFileInputLine.sendKeys(System.getProperty("user.dir") + inputFile + Keys.ENTER);
     }
 
     @And("manager should be able to see Uploaded file {string} - Fail")
@@ -116,13 +104,6 @@ public class ImportSteps implements ApplicationConstants {
         end.click();
     }
 
-
-
-    @When("manager clicks to the Load File Button and input {string}")
-    public void manager_clicks_to_the_Load_File_Button_and_input(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
-    }
 
 
 

@@ -19,9 +19,9 @@ Feature:
     And manager clicks "List" button
     Then manager clicks "Import on Calendar Page" button
 
-    When manager sendKeys "/uploaded_files/utility.xlsx" in "Upload line"
+    When manager sendKeys "/uploaded_files/utility.xlsx" in "Load File"
     Then "utility.xlsx" should be displayed on the Input Line
-    And manager should be able to "see Map your columns to import" Message
+    And manager should be able to see "Map your columns to import" Message
     Then manager clicks "Don't Import" button
     And manager should be able to see "Active" button
     Then manager clicks "Active" button

@@ -11,12 +11,13 @@ Feature:
 		# Pre-Condition: Environment is up and running.
 
     Given user on the Landing page
-    When user clicks BriteErpDemo button
+    When user clicks "BriteErpDemo" button
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then manager clicks Calendar icon on Headers
-    Then manager clicks List button
-    When manager clicks Import button
+    Then manager clicks "Calendar" button
+    Then manager clicks "List" button
+    When manager clicks "Import on Calendar Page" button
 
-    Then manager should be able to see Input line with "No file chosen..." by default
-    But manager should be able to Type "/uploaded_files/utility.xlsx" to the Upload line - Fail
-    And manager should be able to see Uploaded file "utility.xlsx" - Fail
+    Then manager should be able to see "No file chosen..." message by default in "Input line"
+    And manager sendKeys "/uploaded_files/utility.xlsx" in "Input line"
+    But "utility.xlsx" should be displayed on the Input Line
+#    fail

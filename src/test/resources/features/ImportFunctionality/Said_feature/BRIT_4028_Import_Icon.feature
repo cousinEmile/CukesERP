@@ -13,19 +13,6 @@ Feature:
     Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
     When manager clicks "Calendar" button
     And manager clicks "List" button
-
-    And manager clicks "Import on Calendar Page" button
-
-    Then the manager should be able to see "Import" button
-    When click Import button
-    Then Import page should be displayed with "actualTitle"
-
-    Given user on the First page
-    When user clicks Brite Erp Demo
-    Then Inventory Manager 2 logs in using "inm2@info.com" and "alsfuh7we68"
-    Then click Calendar icon on Headers
-    Then click List button
-
-    Then the manager should be able to see "Import" button
-    When click Import button
-    Then Import page should be displayed with "actualTitle"
+    Then manager should be able to see "Import" button
+    When manager clicks "Import on Calendar Page" button
+    Then "Import page" Title should be displayed "Import a File - Odoo"
