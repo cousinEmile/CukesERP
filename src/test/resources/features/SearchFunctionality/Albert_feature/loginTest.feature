@@ -12,8 +12,12 @@ Feature: Calendar Module
     Then breadcrumb is displayed
     And the user is logged in
 
-  @loginUser
-  Scenario: Login as user
-    When user logs in as general user
-    Then breadcrumb is displayed
-    And the user is logged in
+#  @loginUser
+#  Scenario: Login as user
+#    When user logs in as general user
+#    Then breadcrumb is displayed
+#    And the user is logged in
+
+
+
+

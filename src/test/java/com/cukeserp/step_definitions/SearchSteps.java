@@ -1,14 +1,21 @@
 package com.cukeserp.step_definitions;
 
 import com.cukeserp.utilities.Pages;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.it.Ma;
 import org.junit.Assert;
-
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import com.cukeserp.utilities.BrowserUtils.*;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.cukeserp.utilities.ApplicationConstants.MINUS_ICON_CLASS;
 import static com.cukeserp.utilities.ApplicationConstants.MYMEETINGS_SEARCHBARICON_LABEL;
+import static com.cukeserp.utilities.BrowserUtils.waitForClickablility;
 
 public class SearchSteps {
 Pages pages = new Pages ();
@@ -55,13 +62,50 @@ Pages pages = new Pages ();
     }
 
 
+    @And ( "I select Add Custom Filter" )
+    public void iSelectAddCustomFilter ( ) {
+        waitForClickablility(pages.getSearchPage ().FilterButton,15);
+    pages.getSearchPage ().FilterButton.click ();
+    pages.getSearchPage ().AddCustomFilter.click ();
+        
+    }
+
+
+
+    @Then ( "I should see the following Custom Filter {string} displayed along with the corresponding {string}" )
+    public void iShouldSeeTheFollowingCustomFilterDisplayedAlongWithTheCorresponding ( String arg0 , String arg1 ) {
+
+        Select customFilters = new Select ( pages.getSearchPage ().CustomFilter_SelectElement);
+        Select correspondingConditions = new Select(pages.getSearchPage ().CustomFilterBoolean_SelectElement);
+
+        Map<String, List<WebElement>> addMe = new HashMap<> (  );
+
+        for(WebElement a : customFilters.getOptions ()){
+
+                addMe.put ( a.getText ().trim (), correspondingConditions.getOptions () );
+
+        }
+
+        System.out.println (addMe.size () );
 
 
 
 
+//        List<WebElement> filters = customFilters.getOptions ();
+//        List<WebElement> options = correspondingConditions.getOptions ();
+//        Map<String, >
 
 
 
+        //
 
 
+
+//
+
+//
+
+
+
+    }
 }

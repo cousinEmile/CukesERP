@@ -4,10 +4,7 @@ Feature: As a user, I should be able to FILTER Advanced Search queries of
 
 
   Background:
-    Given user is on the login page
-    When user logs in as general user
-    Then breadcrumb is displayed
-    And the user is logged in
+   Given user is on the Calendar page
 
   Scenario: Verify that User can refine Advanced Search queries
   by meetings they have created through filter titled 'My Meetings'
@@ -16,12 +13,6 @@ Feature: As a user, I should be able to FILTER Advanced Search queries of
     Then user should see the icon in the Magnifying Glass change from a plus-sign to a minus-sign
     And three new icons should be revealed below the Search Bar, Filters, Group By, and Favorites
     When the user clicks on the Advanced Search icon titled Filters
-    And a drop down menu extends from the Filters icon with the given <options>
-      | options           |
-      | My Events         |
-      | My Meetings       |
-      | Unread Messages   |
-      | Add Custom Filter |
     And user clicks on the option My Meetings
     Then user should observe a new tag in the search bar labeled My Meetings
 
