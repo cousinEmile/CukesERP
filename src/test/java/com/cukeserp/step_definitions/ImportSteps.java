@@ -14,7 +14,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class ImportSteps implements ApplicationConstants {
+public class ImportSteps extends BrowserUtils implements ApplicationConstants {
     Pages pages = new Pages();
 
     @But("manager should be able to Type {string} to the Upload line - Fail")
@@ -32,7 +32,6 @@ public class ImportSteps implements ApplicationConstants {
     }
 
 
-
     @Then("manager should be able to see The first row contains the label of the column Checkbox")
     public void manager_should_be_able_to_see_The_first_row_contains_the_label_of_the_column_Checkbox() {
         Assert.assertEquals(pages.getImportPage().theFirstRowLabelText.getText(), THE_FIRST_ROW_CONTAINS);
@@ -48,11 +47,6 @@ public class ImportSteps implements ApplicationConstants {
         pages.getImportPage().theFirstRowLabel.click();
     }
 
-    @Then("manager should be able to see Show fields of relation fields Checkbox")
-    public void manager_should_be_able_to_see_Show_fields_of_relation_fields_Checkbox() {
-       Assert.assertEquals(pages.getImportPage().showFieldsText.getText(),SHOW_FIELDS_OF_RELATION);
-    }
-
     @Then("verify Checkbox Show fields of relation fields is selected by default")
     public void verify_Checkbox_Show_fields_of_relation_fields_is_selected_by_default() {
         Assert.assertTrue(pages.getImportPage().showFields.isSelected());
@@ -65,6 +59,7 @@ public class ImportSteps implements ApplicationConstants {
 
     @When("Show fields of relation fields Checkbox is not selected")
     public void show_fields_of_relation_fields_Checkbox_is_not_selected() {
+      wait(2);
         Assert.assertFalse(pages.getImportPage().showFields.isSelected());
     }
 

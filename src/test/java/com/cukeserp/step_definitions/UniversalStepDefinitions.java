@@ -94,11 +94,11 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 pages.getImportPage().copyTheFullErrorToClipboardButton.click();
                 break;
             case "see details":
-                waitForClickablility(pages.getImportPage().seeDetailsButton,10);
+                waitForClickablility(pages.getImportPage().seeDetailsButton, 10);
                 pages.getImportPage().seeDetailsButton.click();
                 break;
             case "Ok":
-                waitForClickablility(pages.getImportPage().seeDetailsButton,10);
+                waitForClickablility(pages.getImportPage().seeDetailsButton, 10);
                 pages.getImportPage().errorMessageOkButton.click();
                 break;
         }
@@ -141,18 +141,18 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 Assert.assertEquals(pages.getImportPage().cancelButton.getText(), actualButton);
                 break;
             case "Copy the full error to clipboard":
-                waitForVisibility(pages.getImportPage().copyTheFullErrorToClipboardButton,10);
-                Assert.assertEquals(pages.getImportPage().copyTheFullErrorToClipboardButton.getText(),actualButton);
+                waitForVisibility(pages.getImportPage().copyTheFullErrorToClipboardButton, 10);
+                Assert.assertEquals(pages.getImportPage().copyTheFullErrorToClipboardButton.getText(), actualButton);
                 break;
             case "see details":
-                waitForVisibility(pages.getImportPage().seeDetailsButton,10);
+                waitForVisibility(pages.getImportPage().seeDetailsButton, 10);
                 wait(3);
                 System.out.println(pages.getImportPage().seeDetailsButton.getText());
-                Assert.assertEquals(pages.getImportPage().seeDetailsButton.getText(),actualButton);
+                Assert.assertEquals(pages.getImportPage().seeDetailsButton.getText(), actualButton);
                 break;
             case "Ok":
-                waitForVisibility(pages.getImportPage().errorMessageOkButton,10);
-                Assert.assertEquals(pages.getImportPage().errorMessageOkButton.getText(),actualButton);
+                waitForVisibility(pages.getImportPage().errorMessageOkButton, 10);
+                Assert.assertEquals(pages.getImportPage().errorMessageOkButton.getText(), actualButton);
                 break;
 
 
@@ -186,8 +186,8 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 Assert.assertEquals(pages.getImportPage().pleasuUseCopyButtonMessage.getText(), actualMessage);
                 break;
             case "Uncaught event settings_changed inappropriate in current state previewing":
-                waitForVisibility(pages.getImportPage().uncaughtEventSettingsChanged,10);
-                Assert.assertEquals(pages.getImportPage().uncaughtEventSettingsChanged.getText(),actualMessage);
+                waitForVisibility(pages.getImportPage().uncaughtEventSettingsChanged, 10);
+                Assert.assertEquals(pages.getImportPage().uncaughtEventSettingsChanged.getText(), actualMessage);
                 break;
 
         }
@@ -224,4 +224,39 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
         }
     }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    @Then("{string} should be able to see {string} Checkbox")
+    public void should_be_able_to_see_Checkbox(String actualUserName, String checkboxName) {
+
+        switch (checkboxName) {
+            case "Show fields of relation fields (advanced)":
+                waitForVisibility(pages.getImportPage().showFields,10);
+                Assert.assertEquals(pages.getImportPage().showFieldsText.getText(), checkboxName);
+                break;
+            case "":
+
+
+        }
+    }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    @Then("{string} clicks {string} Checkbox")
+    public void clicks_Checkbox(String actualUserName, String checkboxName) {
+
+        switch (checkboxName) {
+            case "Show fields of relation fields (advanced)":
+                waitForClickablility(pages.getImportPage().showFields,10);
+                pages.getImportPage().showFields.click();
+                break;
+            case "":
+                break;
+        }
+    }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 }

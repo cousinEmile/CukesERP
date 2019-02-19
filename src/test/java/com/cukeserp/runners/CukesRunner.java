@@ -20,10 +20,10 @@ import java.util.concurrent.TimeUnit;
                 "json:target/cucumber.json" ,
                 "html:target/cucumber/" ,
                 "rerun:target/rerun.txt"},
-        features = "src/test/resources/features/ImportFunctionality/Said_feature",
+        features = "src/test/resources/features/ImportFunctionality/Aiman_feature",
         glue = "com.cukeserp.step_definitions"
         ,dryRun = false
-        ,tags = "@BRIT-4023, @BRIT-4022,@BRIT-4028,@BRIT-4032,@BRIT-4034,@BRIT-4035,@BRIT-4036,@BRIT-4037"
+        ,tags = "@BRIT-4074"
         ,monochrome=true
 
 )
