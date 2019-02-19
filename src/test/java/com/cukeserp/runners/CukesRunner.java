@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
         features = "src/test/resources/features/ImportFunctionality/Said_feature",
         glue = "com.cukeserp.step_definitions"
         ,dryRun = false
-        ,tags = "@tryME"
+        ,tags = "@BRIT-4074"
         ,monochrome=true
 
 )

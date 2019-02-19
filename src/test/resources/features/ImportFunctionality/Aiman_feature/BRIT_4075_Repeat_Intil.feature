@@ -19,11 +19,11 @@ Feature:
     Then "utility.xlsx" should be displayed on the Input Line
     And "Manager" should be able to see "Map your columns to import" Message
 
-    Then manager should be able to see Show fields of relation fields Checkbox
+    Then "Manager" should be able to see "Show fields of relation fields (advanced)" Checkbox
     And verify Checkbox Show fields of relation fields is selected by default
-    Then manager clicks Show fields of relation fields Checkbox
+    Then "Manager" clicks "Show fields of relation fields (advanced)" Checkbox
 
-    When Show fields of relation fields Checkbox is not selected
+    When "Show fields of relation fields (advanced)" Checkbox is not selected
     Then "Manager" clicks "Don't Import" button
-    And manager should be able to see Repeat Until
-    Then manager clicks Repeat Until on the selective panel
+    And "Manager" should be able to see "Repeat Until"
+    Then "Manager" clicks "Repeat Until" on the selective panel

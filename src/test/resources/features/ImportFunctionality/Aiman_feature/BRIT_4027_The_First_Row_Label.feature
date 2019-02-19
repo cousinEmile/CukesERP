@@ -7,7 +7,6 @@ Feature:
 	# *  Verify that "The first row contains the label of the column" displayed and clickable
   @BRIT-4027 @Calendar @Mclean
   Scenario: Cucumber - Calendar Import -The first row contains the label of the column
-  Scenario: The first row contains the label of the column
 
     Given I open "http://52.39.162.23" url
     When "I" clicks "BriteErpDemo" button
@@ -25,7 +24,7 @@ Feature:
     Then "utility.xlsx" should be displayed on the Input Line
     And "Manager" should be able to see "Map your columns to import" Message
 
-    Then manager should be able to see The first row contains the label of the column Checkbox
+    Then "Manager" should be able to see "The first row contains the label of the column" Checkbox
     And verify Checkbox The first row contains the label of the column is selected by default
-    Then manager clicks The first row contains the label of the column Checkbox
+    Then "Manager" clicks "The first row contains the label of the column" Checkbox
 		

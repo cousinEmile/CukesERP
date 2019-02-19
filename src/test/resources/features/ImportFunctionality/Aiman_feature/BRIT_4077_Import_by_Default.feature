@@ -8,8 +8,6 @@ Feature:
   @BRIT-4077 @Calendar @Mclean
   Scenario: Cucumber - Calendar Import - Import by Default
 
-  Scenario: Cucumber - Calendar / Import actions - Import Icon (Manager)
-
     Given I open "http://52.39.162.23" url
     When "I" clicks "BriteErpDemo" button
     Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"

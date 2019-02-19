@@ -8,8 +8,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 import java.util.Map;
+
+import static com.cukeserp.utilities.ApplicationConstants.*;
 
 public class UniversalStepDefinitions extends BrowserUtils {
     Pages pages = new Pages();
@@ -232,10 +235,12 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
         switch (checkboxName) {
             case "Show fields of relation fields (advanced)":
-                waitForVisibility(pages.getImportPage().showFields,10);
+                waitForVisibility(pages.getImportPage().showFields, 10);
                 Assert.assertEquals(pages.getImportPage().showFieldsText.getText(), checkboxName);
                 break;
-            case "":
+            case "The first row contains the label of the column":
+                Assert.assertEquals(pages.getImportPage().theFirstRowLabelText.getText(), THE_FIRST_ROW_CONTAINS);
+                break;
 
 
         }
@@ -248,15 +253,55 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
         switch (checkboxName) {
             case "Show fields of relation fields (advanced)":
-                waitForClickablility(pages.getImportPage().showFields,10);
+                waitForClickablility(pages.getImportPage().showFields, 10);
                 pages.getImportPage().showFields.click();
                 break;
-            case "":
+            case "The first row contains the label of the column":
+                pages.getImportPage().theFirstRowLabel.click();
                 break;
         }
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    @Then("{string} should be able to see {string}")
+    public void should_be_able_to_see(String actualUserName, String selectName) {
+
+        switch (selectName){
+            case "Start Date":
+                Assert.assertEquals(pages.getImportPage().startDate.getText(), START_DATE);
+                break;
+            case "Repeat Until":
+                Assert.assertEquals(pages.getImportPage().repeatUntil.getText(), REPEAT_UNTIL);
+                break;
+            case "End Date":
+                 Assert.assertEquals(pages.getImportPage().endDate.getText(), END_DATE);
+                 break;
+        }
+    }
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    @Then("{string} clicks {string} on the selective panel")
+    public void clicks_on_the_selective_panel(String actualUserName, String selectName) {
+
+        switch (selectName){
+            case "Start Date":
+                WebElement start = pages.getImportPage().startDate;
+                BrowserUtils.waitForClickablility(start,2);
+                start.click();
+                break;
+            case "Repeat Until":
+                WebElement repeat = pages.getImportPage().repeatUntil;
+                BrowserUtils.waitForClickablility(repeat,3);
+                repeat.click();
+                break;
+            case "End Date":
+                WebElement end = pages.getImportPage().endDate;
+                BrowserUtils.waitForClickablility(end,4);
+                end.click();
+                break;
+
+        }
+    }
 
 }

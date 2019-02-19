@@ -23,7 +23,7 @@ Feature:
     And verify Checkbox Show fields of relation fields is selected by default
     Then "Manager" clicks "Show fields of relation fields (advanced)" Checkbox
 
-    When Show fields of relation fields Checkbox is not selected
+    When "Show fields of relation fields (advanced)" Checkbox is not selected
     Then "Manager" clicks "Don't Import" button
-    And manager should be able to see End Date
-    Then manager clicks End Date on the selective panel
+    And "Manager" should be able to see "End Date"
+    Then "Manager" clicks "End Date" on the selective panel
