@@ -1,5 +1,4 @@
 package com.cukeserp.step_definitions;
-
 import com.cukeserp.utilities.ApplicationConstants;
 import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Driver;
@@ -36,7 +35,6 @@ public class ImportSteps extends BrowserUtils implements ApplicationConstants {
         Assert.assertTrue(pages.getImportPage().theFirstRowLabel.isSelected());
     }
 
-
     @Then("verify Checkbox Show fields of relation fields is selected by default")
     public void verify_Checkbox_Show_fields_of_relation_fields_is_selected_by_default() {
         Assert.assertTrue(pages.getImportPage().showFields.isSelected());
@@ -49,5 +47,6 @@ public class ImportSteps extends BrowserUtils implements ApplicationConstants {
     }
 
 
-}
+    }
+
 

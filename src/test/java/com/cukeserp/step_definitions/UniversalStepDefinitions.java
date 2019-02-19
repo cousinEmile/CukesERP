@@ -60,10 +60,6 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 waitForClickablility(pages.getCalendarListViewPage().import_button, 10);
                 pages.getCalendarListViewPage().import_button.click();
                 break;
-            case "Don't Import":
-                waitForClickablility(pages.getImportPage().messageForSelect, 10);
-                pages.getImportPage().dontImportField.click();
-                break;
             case "Active":
                 waitForClickablility(pages.getImportPage().active, 10);
                 pages.getImportPage().active.click();
@@ -158,7 +154,6 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 Assert.assertEquals(pages.getImportPage().errorMessageOkButton.getText(), actualButton);
                 break;
 
-
         }
     }
 
@@ -205,7 +200,6 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 Assert.assertEquals(pages.getImportPage().loadFileInputLine.getAttribute("placeholder"), actualMessage);
                 break;
 
-
         }
     }
 
@@ -239,10 +233,8 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 Assert.assertEquals(pages.getImportPage().showFieldsText.getText(), checkboxName);
                 break;
             case "The first row contains the label of the column":
-                Assert.assertEquals(pages.getImportPage().theFirstRowLabelText.getText(), THE_FIRST_ROW_CONTAINS);
+                Assert.assertEquals(pages.getImportPage().theFirstRowLabelText.getText(), checkboxName);
                 break;
-
-
         }
     }
 
@@ -253,10 +245,11 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
         switch (checkboxName) {
             case "Show fields of relation fields (advanced)":
-                waitForClickablility(pages.getImportPage().showFields, 10);
+                waitForClickablility(pages.getImportPage().messageForSelect, 10);
                 pages.getImportPage().showFields.click();
                 break;
             case "The first row contains the label of the column":
+                waitForClickablility(pages.getImportPage().messageForSelect, 10);
                 pages.getImportPage().theFirstRowLabel.click();
                 break;
         }
@@ -269,14 +262,17 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
         switch (selectName){
             case "Start Date":
-                Assert.assertEquals(pages.getImportPage().startDate.getText(), START_DATE);
+                Assert.assertEquals(pages.getImportPage().startDate.getText(), selectName);
                 break;
             case "Repeat Until":
-                Assert.assertEquals(pages.getImportPage().repeatUntil.getText(), REPEAT_UNTIL);
+                Assert.assertEquals(pages.getImportPage().repeatUntil.getText(), selectName);
                 break;
             case "End Date":
-                 Assert.assertEquals(pages.getImportPage().endDate.getText(), END_DATE);
+                 Assert.assertEquals(pages.getImportPage().endDate.getText(), selectName);
                  break;
+            case "Dot":
+                Assert.assertEquals(pages.getImportPage().dot.getText(), selectName);
+                break;
         }
     }
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -300,8 +296,46 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 BrowserUtils.waitForClickablility(end,4);
                 end.click();
                 break;
+            case "Dot":
+                pages.getImportPage().dot.click();
+                break;
+            case "":
+                break;
 
         }
     }
 
-}
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    @Then("{string} should be able to see {string} field")
+    public void should_be_able_to_see_field(String actualUserName, String fieldName) {
+        switch (fieldName) {
+            case "Thousands Separator":
+                Assert.assertTrue(pages.getImportPage().thousandsSeparatorField.getText().contains(fieldName));
+                break;
+            case "":
+                break;
+        }}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+    @When("{string} clicks {string} select button")
+    public void clicks_select_button(String actualUserName, String selectButtonName) {
+        switch (selectButtonName){
+            case "Thousands Separator":
+                pages.getImportPage().thousandsSeparator.click();
+                break;
+            case "Don't Import":
+                waitForClickablility(pages.getImportPage().messageForSelect, 10);
+                pages.getImportPage().dontImportField.click();
+                break;
+            case "":
+                break;
+            }
+
+
+
+
+}}

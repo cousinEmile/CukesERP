@@ -68,11 +68,15 @@ public class ImportPage {
     @FindBy(xpath =  "//tr[@class='oe_import_grid-header']")
     public WebElement fileNameTopDontImport;
 
-    @FindBy(xpath = "//label[@for='float_thousand_separator_export233']")
-    public WebElement thousandsSeparator;
+    @FindBy(xpath = "(//div[@style='display: block;']/p/label)[6]")
+    //(//a[@class='select2-choice']/span)[5]
+    public WebElement thousandsSeparatorField;
 
     @FindBy(xpath ="(//span[@class='select2-chosen'])[3]")
-    public WebElement thousandsSeparatorField;
+    public WebElement thousandsSeparator;
+
+    @FindBy(xpath = "(//div[@class='select2-result-label'])[2]")
+    public WebElement dot;
 
     @FindBy(xpath =  "(//div[@class='o_cp_buttons']/button)[1]")
     public WebElement testImportButton;

@@ -12,4 +12,8 @@ Feature:
 
     When "Manager" sendKeys "/uploaded_files/utility.xlsx" in "Load File"
     Then "utility.xlsx" should be displayed on the Input Line
-    And "Manager" should be able to see "Map your columns to import" Message
+    And "Manager" should be able to see "Thousands Separator" field
+
+    When "Manager" clicks "Thousands Separator" select button
+    Then "Manager" should be able to see "Dot"
+    And "Manager" clicks "Dot" on the selective panel

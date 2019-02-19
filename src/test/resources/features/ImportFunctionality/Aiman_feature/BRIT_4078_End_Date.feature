@@ -24,6 +24,6 @@ Feature:
     Then "Manager" clicks "Show fields of relation fields (advanced)" Checkbox
 
     When "Show fields of relation fields (advanced)" Checkbox is not selected
-    Then "Manager" clicks "Don't Import" button
+    Then "Manager" clicks "Don't Import" select button
     And "Manager" should be able to see "End Date"
     Then "Manager" clicks "End Date" on the selective panel

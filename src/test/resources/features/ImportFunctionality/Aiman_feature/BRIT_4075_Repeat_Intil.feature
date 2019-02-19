@@ -24,6 +24,6 @@ Feature:
     Then "Manager" clicks "Show fields of relation fields (advanced)" Checkbox
 
     When "Show fields of relation fields (advanced)" Checkbox is not selected
-    Then "Manager" clicks "Don't Import" button
+    Then "Manager" clicks "Don't Import" select button
     And "Manager" should be able to see "Repeat Until"
     Then "Manager" clicks "Repeat Until" on the selective panel

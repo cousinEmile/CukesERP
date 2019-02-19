@@ -1,7 +1,12 @@
-@Aiman
-Feature:
+Feature: 
 
-  Scenario: Show fields of relation
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# *  Verify that "Show fields of relation fields (advanced)" is displayed and clickable
+  @BRIT-4076 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import - Show fields of relation fields
 
     Given I open "http://52.39.162.23" url
     When "I" clicks "BriteErpDemo" button
@@ -26,4 +31,3 @@ Feature:
     Then "Manager" should be able to see "Show fields of relation fields (advanced)" Checkbox
     And verify Checkbox Show fields of relation fields is selected by default
     Then "Manager" clicks "Show fields of relation fields (advanced)" Checkbox
-
