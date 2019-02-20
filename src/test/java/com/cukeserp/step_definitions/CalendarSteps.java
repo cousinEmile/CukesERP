@@ -23,33 +23,5 @@ public class CalendarSteps implements ApplicationConstants {
     }
 
 
-    @Given("^I open \"([^\"]*)\" url$")
-    public void iOpenUrl(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
 
-    @Then("^\"([^\"]*)\" Title should be displayed \"([^\"]*)\"$")
-    public void titleShouldBeDisplayed(String arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @When("^\"([^\"]*)\" clicks \"([^\"]*)\" button$")
-    public void clicksButton(String arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @When("^I log in as a \"([^\"]*)\" using \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void iLogInAsAUsingAnd(String arg0, String arg1, String arg2) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @Then("^page shows weekly view calender$")
-    public void pageShowsWeeklyViewCalender() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
 }

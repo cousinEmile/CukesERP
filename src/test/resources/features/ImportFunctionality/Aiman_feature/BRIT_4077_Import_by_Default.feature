@@ -12,14 +12,14 @@ Feature:
     When "I" clicks "BriteErpDemo" button
     Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
     Then "Manager" clicks "Calendar" button
-
-    Then "Manager" should be able to see "List" button
     Then "Manager" clicks "List" button
     When "Manager" clicks "Import on Calendar Page" button
+
     When "Manager" sendKeys "/uploaded_files/utility.xlsx" in "Load File"
     Then "utility.xlsx" should be displayed on the Input Line
     And "Manager" should be able to see "Map your columns to import" Message
-    Then "Manager" clicks "Don't Import" button
-    And "Manager" should be able to see "Active" button
-    Then "Manager" clicks "Active" button
+
+    When "Manager" clicks "Don't Import" button
+    Then "Manager" should be able to see "Active" button
+    And "Manager" clicks "Active" button
     And "Manager" clicks "x button to delete Active" button

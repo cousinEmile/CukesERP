@@ -53,27 +53,29 @@ public class ImportPage {
     @FindBy(xpath = "(//a[@class='select2-choice'])[5]/abbr")
     public WebElement xButton;
 
-    @FindBy(xpath = "//label[@for='encoding_export233']")
-    public WebElement encoding;
+    @FindBy(xpath = "(//div[@style='display: block;']/p/label)[1]")
+    public WebElement encodingText;
 
     @FindBy(xpath = "//label[@for='encoding_export233']")
-    public WebElement encodingField;
+    public WebElement encodingButton;
 
-    @FindBy(xpath = "//label[@for='separator_export233']")
-    public WebElement separator;
+    @FindBy(xpath = "(//div[@style='display: block;']/p/label)[2]")
+    public WebElement separatorText;
 
     @FindBy(xpath = "(//a[@class='select2-choice'])[2]")
-    public WebElement separatorField;
+    public WebElement separatorButton;
+
+    @FindBy(xpath = "(//div[@class='select2-result-label'])[2]")
+    public WebElement semicolon;
 
     @FindBy(xpath =  "//tr[@class='oe_import_grid-header']")
     public WebElement fileNameTopDontImport;
 
     @FindBy(xpath = "(//div[@style='display: block;']/p/label)[6]")
-    //(//a[@class='select2-choice']/span)[5]
-    public WebElement thousandsSeparatorField;
+    public WebElement thousandsSeparatorText;
 
     @FindBy(xpath ="(//span[@class='select2-chosen'])[3]")
-    public WebElement thousandsSeparator;
+    public WebElement thousandsSeparatorButton;
 
     @FindBy(xpath = "(//div[@class='select2-result-label'])[2]")
     public WebElement dot;
@@ -116,6 +118,9 @@ public class ImportPage {
 
     @FindBy(xpath ="//div[@class='col-sm-12']//a" )
     public WebElement helpButton;
+
+    @FindBy(css = ".oe_import_grid-header")
+    public WebElement fileName;
 
 
 }

@@ -273,6 +273,12 @@ public class UniversalStepDefinitions extends BrowserUtils {
             case "Dot":
                 Assert.assertEquals(pages.getImportPage().dot.getText(), selectName);
                 break;
+            case "Semicolon":
+                Assert.assertEquals(pages.getImportPage().semicolon.getText(), selectName);
+                break;
+            case "Utility":
+                Assert.assertEquals(pages.getImportPage().fileName.getText(), selectName);
+                break;
         }
     }
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -299,7 +305,10 @@ public class UniversalStepDefinitions extends BrowserUtils {
             case "Dot":
                 pages.getImportPage().dot.click();
                 break;
-            case "":
+            case "Semicolon":
+                pages.getImportPage().semicolon.click();
+                break;
+            case "windows-1252":
                 break;
 
         }
@@ -310,11 +319,15 @@ public class UniversalStepDefinitions extends BrowserUtils {
     @Then("{string} should be able to see {string} field")
     public void should_be_able_to_see_field(String actualUserName, String fieldName) {
         switch (fieldName) {
-            case "Thousands Separator":
-                Assert.assertTrue(pages.getImportPage().thousandsSeparatorField.getText().contains(fieldName));
+            case "Thousands Separator:":
+                Assert.assertEquals(pages.getImportPage().thousandsSeparatorText.getText(),fieldName);
                 break;
-            case "":
+            case "Separator:":
+                Assert.assertEquals(pages.getImportPage().separatorText.getText(), fieldName);
                 break;
+            case "Encoding":
+                break;
+
         }}
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -325,13 +338,16 @@ public class UniversalStepDefinitions extends BrowserUtils {
     public void clicks_select_button(String actualUserName, String selectButtonName) {
         switch (selectButtonName){
             case "Thousands Separator":
-                pages.getImportPage().thousandsSeparator.click();
+                pages.getImportPage().thousandsSeparatorButton.click();
                 break;
             case "Don't Import":
                 waitForClickablility(pages.getImportPage().messageForSelect, 10);
                 pages.getImportPage().dontImportField.click();
                 break;
-            case "":
+            case "Separator":
+                pages.getImportPage().separatorButton.click();
+                break;
+            case "Encoding":
                 break;
             }
 

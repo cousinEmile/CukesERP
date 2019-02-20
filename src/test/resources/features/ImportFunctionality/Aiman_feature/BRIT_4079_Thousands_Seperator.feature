@@ -1,7 +1,12 @@
-@BRIT-4079
-Feature:
+Feature: 
 
-  Scenario: Thousands Seperator
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# * Verify that Options for Decimal Separator should be displayed and selective
+  @BRIT-4079 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import - Thousands Separator
 
     Given I open "http://52.39.162.23" url
     When "I" clicks "BriteErpDemo" button
@@ -17,3 +22,4 @@ Feature:
     When "Manager" clicks "Thousands Separator" select button
     Then "Manager" should be able to see "Dot"
     And "Manager" clicks "Dot" on the selective panel
+		
