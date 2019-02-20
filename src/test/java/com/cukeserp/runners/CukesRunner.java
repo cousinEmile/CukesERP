@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features/ImportFunctionality/Aiman_feature",
         glue = "com.cukeserp.step_definitions"
-        ,dryRun = false
+        ,dryRun = true
         ,tags = "@BRIT-4081"
 
         ,monochrome=true

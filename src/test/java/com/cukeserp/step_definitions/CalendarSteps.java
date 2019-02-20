@@ -17,11 +17,5 @@ import static com.cukeserp.utilities.ApplicationConstants.CALENDAR_PAGE_TITLE;
 public class CalendarSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
-    @When("hover to the List option on the right top corner")
-    public void hover_to_the_List_option_on_the_right_top_corner() {
-        BrowserUtils.hover(pages.getCalendar().listView);
-    }
-
-
 
 }

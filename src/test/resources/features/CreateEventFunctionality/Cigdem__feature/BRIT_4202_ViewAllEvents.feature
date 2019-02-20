@@ -1,4 +1,4 @@
-@runMe
+@runMe2
 Feature:
 
 	#*User Story*
@@ -8,9 +8,6 @@ Feature:
 	#*Acceptance Criteria*
 	# * Verify that user can create event on any day in selected month.
 	@BRIT-4202
-	Scenario: sample
-		User should be able to see the calendar on montly-based format.
-		
 		Scenario: ViewAllEventsOfWeekly
 		    Given I open "http://52.39.162.23" url
 		    Then "Landing Page" Title should be displayed "Odoo"
