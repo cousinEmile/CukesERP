@@ -56,8 +56,11 @@ public class ImportPage {
     @FindBy(xpath = "(//div[@style='display: block;']/p/label)[1]")
     public WebElement encodingText;
 
-    @FindBy(xpath = "//label[@for='encoding_export233']")
+    @FindBy(xpath = "(//a[@class='select2-choice'])[1]")
     public WebElement encodingButton;
+
+    @FindBy(xpath = "(//div[@class='select2-result-label'])[3]")
+    public WebElement windows1252;
 
     @FindBy(xpath = "(//div[@style='display: block;']/p/label)[2]")
     public WebElement separatorText;

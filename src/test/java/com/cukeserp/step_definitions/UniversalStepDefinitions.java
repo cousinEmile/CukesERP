@@ -279,6 +279,9 @@ public class UniversalStepDefinitions extends BrowserUtils {
             case "Utility":
                 Assert.assertEquals(pages.getImportPage().fileName.getText(), selectName);
                 break;
+            case "windows-1252":
+                Assert.assertEquals(pages.getImportPage().windows1252.getText(), selectName);
+                break;
         }
     }
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -309,6 +312,7 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 pages.getImportPage().semicolon.click();
                 break;
             case "windows-1252":
+                pages.getImportPage().windows1252.click();
                 break;
 
         }
@@ -319,13 +323,14 @@ public class UniversalStepDefinitions extends BrowserUtils {
     @Then("{string} should be able to see {string} field")
     public void should_be_able_to_see_field(String actualUserName, String fieldName) {
         switch (fieldName) {
-            case "Thousands Separator:":
+            case "Thousands Separator:" :
                 Assert.assertEquals(pages.getImportPage().thousandsSeparatorText.getText(),fieldName);
                 break;
-            case "Separator:":
+            case "Separator:" :
                 Assert.assertEquals(pages.getImportPage().separatorText.getText(), fieldName);
                 break;
-            case "Encoding":
+            case "Encoding:" :
+                Assert.assertEquals(pages.getImportPage().encodingText.getText(), fieldName);
                 break;
 
         }}
@@ -348,6 +353,7 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 pages.getImportPage().separatorButton.click();
                 break;
             case "Encoding":
+                pages.getImportPage().encodingButton.click();
                 break;
             }
 

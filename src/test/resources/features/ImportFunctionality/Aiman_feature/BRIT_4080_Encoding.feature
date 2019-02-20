@@ -1,7 +1,12 @@
-@BRIT-4080
-Feature:
+Feature: 
 
-  Scenario: Encoding
+	#User Story: 
+	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module
+	#
+	#Acceptance Criteria:
+	# * Verify 'Encoding' is displayed and User can select
+  @BRIT-4080 @Calendar @Mclean
+  Scenario: Cucumber - Calendar Import - Encoding
 
     Given I open "http://52.39.162.23" url
     When "I" clicks "BriteErpDemo" button
@@ -12,9 +17,8 @@ Feature:
 
     When "Manager" sendKeys "/uploaded_files/utility.xlsx" in "Load File"
     Then "utility.xlsx" should be displayed on the Input Line
-    And "Manager" should be able to see "Encoding" field
+    And "Manager" should be able to see "Encoding:" field
 
     When "Manager" clicks "Encoding" select button
     Then "Manager" should be able to see "windows-1252"
     And "Manager" clicks "windows-1252" on the selective panel
-
