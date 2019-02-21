@@ -1,4 +1,5 @@
-@runMe2
+
+
 Feature:
 
 	#*User Story*
@@ -8,7 +9,8 @@ Feature:
 	#*Acceptance Criteria*
 	# * Verify that user can create event on any day in selected month.
 	@BRIT-4202
-		Scenario: ViewAllEventsOfWeekly
+	Scenario: sample
+
 		    Given I open "http://52.39.162.23" url
 		    Then "Landing Page" Title should be displayed "Odoo"
 		    When "I" clicks "BriteErpDemo" button

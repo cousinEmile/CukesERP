@@ -13,9 +13,16 @@ import java.util.List;
 public class InboxSteps {
     Pages pages = new Pages();
 
-    @Then("Actual user Name should be displayed {string}")
-    public void actual_user_Name_should_be_displayed(String actualUser) {
-        Assert.assertEquals(pages.getInboxPage().actualUsername.getText(), actualUser);
+
+    @Then("Inbox page Title should be displayed {string}")
+    public void inbox_page_Title_should_be_displayed(String actualTitle) {
+        BrowserUtils.waitUntilTitleEquals(10, actualTitle);
+        Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
+    }
+
+    @Then("{string} name should be {string}")
+    public void name_should_be(String user, String actualUser) {
+        Assert.assertEquals(user, actualUser);
     }
 
     @Then("manager should be able to see following Headers:")
@@ -24,7 +31,11 @@ public class InboxSteps {
         Assert.assertEquals(Headers, actualHeaders);
     }
 
-
+    @When("manager clicks Calendar icon on Headers")
+    public void manager_clicks_Calendar_icon_on_Headers() {
+        BrowserUtils.waitForClickablility(pages.getHeaderPage().calendar_button, 5);
+        pages.getHeaderPage().calendar_button.click();
+    }
 
 
 }

@@ -1,3 +1,4 @@
+@smoker
 @runMe
 Feature: As a user, I should be able to FILTER Advanced Search queries of
   Calendar events/meetings by meetings they have created

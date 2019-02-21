@@ -298,7 +298,6 @@ public class BrowserUtils {
         Arrays.sort(trans);
         return trans;
     }
-
     public static void grabHold(WebDriver driver, String parentHandle) {
         /* /NOTE: Be sure to set -> String parentHandle=driver.getWindowHandle(); prior to the action preceding method deployment */
         Set<String> windows = driver.getWindowHandles();
@@ -368,6 +367,12 @@ public class BrowserUtils {
         }
         return elementVisible;
     }
+
+
+    public static void highLightingElement(WebDriver driver, WebElement target){
+        ((JavascriptExecutor)driver).executeScript ("arguments[0].style.border='3px solid red'", target );
+    }
+
 
 
 }

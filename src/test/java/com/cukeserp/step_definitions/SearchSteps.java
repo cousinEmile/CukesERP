@@ -1,5 +1,6 @@
 package com.cukeserp.step_definitions;
 
+import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Pages;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -64,6 +65,7 @@ Pages pages = new Pages ();
 
     @And ( "I select Add Custom Filter" )
     public void iSelectAddCustomFilter ( ) {
+       BrowserUtils.wait (5  );
         waitForClickablility(pages.getSearchPage ().FilterButton,15);
     pages.getSearchPage ().FilterButton.click ();
     pages.getSearchPage ().AddCustomFilter.click ();
@@ -75,18 +77,32 @@ Pages pages = new Pages ();
     @Then ( "I should see the following Custom Filter {string} displayed along with the corresponding {string}" )
     public void iShouldSeeTheFollowingCustomFilterDisplayedAlongWithTheCorresponding ( String arg0 , String arg1 ) {
 
-        Select customFilters = new Select ( pages.getSearchPage ().CustomFilter_SelectElement);
-        Select correspondingConditions = new Select(pages.getSearchPage ().CustomFilterBoolean_SelectElement);
+        Select customFilters = new Select ( pages.getSearchPage ( ).CustomFilter_SelectElement );
+        Select correspondingConditions = new Select ( pages.getSearchPage ( ).CustomFilterBoolean_SelectElement );
 
-        Map<String, List<WebElement>> addMe = new HashMap<> (  );
+        Map<String, List<WebElement>> addMe = new HashMap<> ( );
 
-        for(WebElement a : customFilters.getOptions ()){
+        for (WebElement a : customFilters.getOptions ( )) {
+            a.click ();
+            BrowserUtils.wait (1);
+            addMe.put ( a.getText ( ).trim ( ) , correspondingConditions.getOptions ( ));
+            for(WebElement b : addMe.get ( "Active" )){
+                System.out.println (b.getText ().trim ());
 
-                addMe.put ( a.getText ().trim (), correspondingConditions.getOptions () );
+            }
 
         }
 
-        System.out.println (addMe.size () );
+        for(WebElement b : addMe.get ( "Activities" )){
+            System.out.println (b.getText ().trim ());
+        }
+        for(WebElement b : addMe.get ( "All Day" )){
+            System.out.println (b.getText ().trim ());
+        }
+
+
+    }
+//        System.out.println (addMe.size () );
 
 
 
@@ -108,4 +124,4 @@ Pages pages = new Pages ();
 
 
     }
-}
+

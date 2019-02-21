@@ -100,6 +100,7 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 waitForClickablility(pages.getImportPage().seeDetailsButton, 10);
                 pages.getImportPage().errorMessageOkButton.click();
                 break;
+
         }
     }
     //----------------------------------------------------------------------------------------------------------------------------------------------------------------

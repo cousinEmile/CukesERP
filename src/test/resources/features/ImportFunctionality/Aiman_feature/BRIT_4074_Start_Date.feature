@@ -1,4 +1,5 @@
-Feature: 
+
+Feature:
 
 	#User Story: 
 	# * As an Inventory Manager 2, I should be able to do actions in import based module on list module

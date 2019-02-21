@@ -1,3 +1,4 @@
+@PR3
 Feature:
 
   @BRIT-4023
@@ -11,7 +12,7 @@ Feature:
     When I log in as a "<username>" using "<email>" and "<password>"
     Then "Inbox Page" Title should be displayed "#Inbox - Odoo"
     And  Actual user Name should be displayed "<username>"
-
+    And I want to go home
     Examples:
       | username               | email                           | password    |
       | InventoryManager 2     | inm2@info.com                   | alsfuh7we68 |

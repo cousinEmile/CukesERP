@@ -1,6 +1,7 @@
 package com.cukeserp.step_definitions;
 
 import com.cukeserp.utilities.*;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -56,4 +57,9 @@ public class LoginTestStepDefinitions {
         Assert.assertEquals(Driver.getDriver ().getTitle ().trim(), CALENDAR_PAGE_TITLE );
     }
 
+
+    @And ( "I want to go home" )
+    public void iWantToGoHome ( ) {
+
+    }
 }

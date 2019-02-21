@@ -6,7 +6,8 @@ Feature:
 	#
 	#Acceptance Criteria;
 	# * Verify that manager should be able to type folder and file name on Input line for importing file  / Fail
-  @BRIT-4034
+  #@BRIT-4034
+  @test1
   Scenario: Cucumber - Calendar / Import actions - Input line, FAIL (Manager)
 		# Pre-Condition: Environment is up and running.
 
