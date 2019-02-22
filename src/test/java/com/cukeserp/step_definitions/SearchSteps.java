@@ -7,12 +7,10 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.java.it.Ma;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import com.cukeserp.utilities.BrowserUtils.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +21,7 @@ import static com.cukeserp.utilities.BrowserUtils.waitForClickablility;
 import static com.cukeserp.utilities.BrowserUtils.waitUntilTitleEquals;
 
 public class SearchSteps {
-    Pages pages = new Pages ( );
+    private final Pages pages = new Pages ( );
 
     @When ( "the user clicks on the Magnifying Glass icon in the far right side of the search bar" )
     public void the_user_clicks_on_the_Magnifying_Glass_icon_in_the_far_right_side_of_the_search_bar ( ) {
@@ -48,12 +46,6 @@ public class SearchSteps {
         pages.getSearchPage ( ).FilterButton.click ( );
     }
 
-
-    @When ( "a drop down menu extends from the Filters icon with the given <options>" )
-    public void a_drop_down_menu_extends_from_the_Filters_icon_with_the_given_options ( Map<String, String> options ) {
-
-
-    }
 
     @When ( "user clicks on the option My Meetings" )
     public void user_clicks_on_the_option_My_Meetings ( ) {
@@ -220,5 +212,188 @@ public class SearchSteps {
         pages.getSearchPage ().SearchBox.sendKeys ( term + Keys.ENTER );
 
     }
+
+    @Then ( "the {string} should be displayed and enabled" )
+    public void theGroupsShouldBeDisplayedAndEnabled ( String groups) {
+        switch (groups) {
+            case "Responsible":
+                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isDisplayed ( ) );
+                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isEnabled ( ) );
+                break;
+            case "Availability":
+                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+                break;
+            case "Privacy":
+                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isDisplayed ( ) );
+                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isEnabled ( ) );
+                break;
+//            case "Active":
+//                Assert.assertTrue ( pages.getSearchPage ( ).CustomGroup_DropDown ( "Active" );
+//                Assert.assertTrue ( pages.getSearchPage ( ).CustomGroup_DropDown ( "Active" );
+//                break;
+//            case "All Day":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Applicant":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isEnabled ( ) );
+//                break;
+//            case "By day":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isEnabled ( ) );
+//                break;
+//            case "Created by":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Created on":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isEnabled ( ) );
+//                break;
+//            case "Date":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isEnabled ( ) );
+//                break;
+//            case "Document Model":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Document Model Name":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isEnabled ( ) );
+//                break;
+//            case "End Date":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isEnabled ( ) );
+//                break;
+//            case "End Datetime":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Fri":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isEnabled ( ) );
+//                break;
+//            case "Last Message Date":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isEnabled ( ) );
+//                break;
+//            case "Last Updated by":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Last Updated on":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isEnabled ( ) );
+//                break;
+//            case "Location":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isEnabled ( ) );
+//                break;
+//            case "Meeting Subject":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Mon":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupPrivacy_button.isEnabled ( ) );
+//                break;
+//            case "Opportunity":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupResponsible_button.isEnabled ( ) );
+//                break;
+//            case "Option":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Recurrence":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Recurrence Termination":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Recurrent":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Recurrent ID date":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Recurrent Rule":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Repeat Until":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Sat":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Show Time as":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Start":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Start Date":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Start DateTime":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Status":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Stop":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//            case "Sun":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Thu":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Tue":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Wed":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+//            case "Weekday":
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isDisplayed ( ) );
+//                Assert.assertTrue ( pages.getSearchPage ( ).groupAvailability_button.isEnabled ( ) );
+//                break;
+
+        }
+
+    }
+
+
+
+
+
+    @When ( "the user clicks on the Advanced Search icon titled Group By and selects add custom groups" )
+    public void theUserClicksOnTheAdvancedSearchIconTitledGroupByAndSelectsAddCustomGroups ( ) {
+        pages.getSearchPage ().GroupBy_button.click ();
+        pages.getSearchPage ().AddCustomDropDownGroup.click ();
+
+    }
+
 }
 
