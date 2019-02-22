@@ -35,6 +35,9 @@ public class SearchPage {
     @FindBy ( xpath = "//input[@class='o_searchview_input']" )
     public WebElement SearchBox;
 
+    @FindBy(css = "div.o_facet_values>span")
+    public WebElement searchTermTag;
+
     @FindBy ( xpath = "//select[@class='o_input o_searchview_extended_prop_field']" )
     public WebElement SelectFromActionNeededButton;
 
