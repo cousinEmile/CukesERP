@@ -45,5 +45,5 @@ Feature:
 
     Then "Manager" should be able to see "Ok" button
     When "Manager" clicks "Ok" button
-    Then "Import page" Title should be displayed "Meetings - Odoo"
+    Then "Import page" Title should be displayed "Import a File - Odoo"
     And url is "http://52.39.162.23/web?#model=calendar.event&action=import"

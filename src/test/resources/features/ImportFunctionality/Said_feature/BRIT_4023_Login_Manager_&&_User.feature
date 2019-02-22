@@ -12,13 +12,13 @@ Feature:
     When I log in as a "<username>" using "<email>" and "<password>"
     Then "Inbox Page" Title should be displayed "#Inbox - Odoo"
     And  Actual user Name should be displayed "<username>"
-    And I want to go home
+
     Examples:
       | username               | email                           | password    |
       | InventoryManager 2     | inm2@info.com                   | alsfuh7we68 |
-#      | InventoryUser4         | in_4@info.com                   | alsfuh7we74 |
-#      | Lunch_Invoicing_User   | Lunch_Invoicing_User@info.com   | LD686gfX26  |
-#      | Lunch_InvoicingManager | Lunch_InvoicingManager@info.com | LD686gfX22  |
-#      | InventoryManager       | in@info.com                     | alsfuh7we67 |
-#      | InventoryManager5      | inm5@info.com                   | trt332qWW12 |
-#      | InventoryManager6      | inm6@info.com                   | trt332qWW13 |
+      | InventoryUser4         | in_4@info.com                   | alsfuh7we74 |
+      | Lunch_Invoicing_User   | Lunch_Invoicing_User@info.com   | LD686gfX26  |
+      | Lunch_InvoicingManager | Lunch_InvoicingManager@info.com | LD686gfX22  |
+      | InventoryManager       | in@info.com                     | alsfuh7we67 |
+      | InventoryManager5      | inm5@info.com                   | trt332qWW12 |
+      | InventoryManager6      | inm6@info.com                   | trt332qWW13 |
