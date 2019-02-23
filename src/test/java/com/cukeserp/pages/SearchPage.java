@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import com.cukeserp.utilities.Driver;
+import org.testng.Assert;
 
 public class SearchPage {
 
@@ -34,6 +35,9 @@ public class SearchPage {
 
     @FindBy ( xpath = "//input[@class='o_searchview_input']" )
     public WebElement SearchBox;
+
+    @FindBy(css = "div.o_facet_values>span")
+    public WebElement searchTermTag;
 
     @FindBy ( xpath = "//select[@class='o_input o_searchview_extended_prop_field']" )
     public WebElement SelectFromActionNeededButton;
@@ -198,8 +202,10 @@ public class SearchPage {
      * Just the bones, add meat and season as required
      * note : Static list.
      **/
-    public void CustomGroup_DropDown ( ) {
+    public void CustomGroup_DropDown (String custom_group ) {
         Select select = new Select ( CustomGroupSelectElement );
+        select.selectByVisibleText ( custom_group );
+        Assert.assertEquals ( select.getFirstSelectedOption ().getText ().trim (), custom_group);
     }
 
 

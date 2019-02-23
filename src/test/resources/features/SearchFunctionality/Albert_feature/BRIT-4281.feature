@@ -22,15 +22,15 @@ Feature:
     Examples:
       | filters                | filter options                                                                                                             |
       | Action Needed          | is true, is false                                                                                                          |
-      | Active                 | is true, is false                                                                                                          |
-      | Activities             | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
-      | All Day                | is true, is false                                                                                                          |
-      | Applicant              | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
-      | Attendees              | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
-      | By day                 | is, is not, is set, is not set                                                                                             |
-      | Created by             | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
-      | Created on             | is equal to, is not equal to, is after, is before, is between, is set, is not set                                          |
-      | Date                   | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
+#      | Active                 | is true, is false                                                                                                          |
+#      | Activities             | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
+#      | All Day                | is true, is false                                                                                                          |
+#      | Applicant              | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
+#      | Attendees              | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
+#      | By day                 | is, is not, is set, is not set                                                                                             |
+#      | Created by             | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
+#      | Created on             | is equal to, is not equal to, is after, is before, is between, is set, is not set                                          |
+#      | Date                   | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
 #      | Date of month          | is equal to, is not equal to, greater than, less than, greater than or equal to, less than or equal to, is set, is not set |
 #      | Description            | contains, doesn't contain, is equal to, is not equal to, is set, is not set                                                |
 #      | Document ID            | is equal to, is not equal to, greater than, less than, greater than or equal to, less than or equal to, is set, is not set |

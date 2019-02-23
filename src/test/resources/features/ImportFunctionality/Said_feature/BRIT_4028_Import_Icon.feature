@@ -10,7 +10,7 @@ Feature:
   Scenario: Cucumber - Calendar / Import actions - Import Icon (Manager)
 
     Given I open "http://52.39.162.23" url
-    When "" clicks "BriteErpDemo" button
+    When "Manager" clicks "BriteErpDemo" button
     Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
     Then "Manager" clicks "Calendar" button
     Then "Manager" clicks "List" button

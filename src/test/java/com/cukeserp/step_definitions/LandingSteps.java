@@ -12,6 +12,7 @@ public class LandingSteps extends BrowserUtils implements ApplicationConstants {
     @Given("I open {string} url")
     public void i_open_url(String url) {
         Driver.getDriver().get(url);
+
     }
 
 
