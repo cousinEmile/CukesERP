@@ -20,12 +20,11 @@ import java.util.concurrent.TimeUnit;
                 "json:target/cucumber.json" ,
                 "html:target/cucumber/" ,
                 "rerun:target/rerun.txt"},
-        features = "src/test/resources/features/ImportFunctionality/Said_feature",
+        features = "src/test/resources/features/SearchFunctionality/Merry_feature",
         glue = "com.cukeserp.step_definitions"
         ,dryRun = false
-        ,tags = "@runMe"
-
-        ,monochrome=true
+        ,tags = "@wip"
+      //  ,monochrome=true
 
 )
 public class CukesRunner {

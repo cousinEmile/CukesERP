@@ -1,12 +1,13 @@
 package com.cukeserp.step_definitions;
 
-import com.cukeserp.utilities.BrowserUtils;
 import com.cukeserp.utilities.Pages;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java.it.Ma;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import com.cukeserp.utilities.BrowserUtils.*;
@@ -65,7 +66,6 @@ Pages pages = new Pages ();
 
     @And ( "I select Add Custom Filter" )
     public void iSelectAddCustomFilter ( ) {
-       BrowserUtils.wait (5  );
         waitForClickablility(pages.getSearchPage ().FilterButton,15);
     pages.getSearchPage ().FilterButton.click ();
     pages.getSearchPage ().AddCustomFilter.click ();
@@ -77,32 +77,18 @@ Pages pages = new Pages ();
     @Then ( "I should see the following Custom Filter {string} displayed along with the corresponding {string}" )
     public void iShouldSeeTheFollowingCustomFilterDisplayedAlongWithTheCorresponding ( String arg0 , String arg1 ) {
 
-        Select customFilters = new Select ( pages.getSearchPage ( ).CustomFilter_SelectElement );
-        Select correspondingConditions = new Select ( pages.getSearchPage ( ).CustomFilterBoolean_SelectElement );
+        Select customFilters = new Select ( pages.getSearchPage ().CustomFilter_SelectElement);
+        Select correspondingConditions = new Select(pages.getSearchPage ().CustomFilterBoolean_SelectElement);
 
-        Map<String, List<WebElement>> addMe = new HashMap<> ( );
+        Map<String, List<WebElement>> addMe = new HashMap<> (  );
 
-        for (WebElement a : customFilters.getOptions ( )) {
-            a.click ();
-            BrowserUtils.wait (1);
-            addMe.put ( a.getText ( ).trim ( ) , correspondingConditions.getOptions ( ));
-            for(WebElement b : addMe.get ( "Active" )){
-                System.out.println (b.getText ().trim ());
+        for(WebElement a : customFilters.getOptions ()){
 
-            }
+                addMe.put ( a.getText ().trim (), correspondingConditions.getOptions () );
 
         }
 
-        for(WebElement b : addMe.get ( "Activities" )){
-            System.out.println (b.getText ().trim ());
-        }
-        for(WebElement b : addMe.get ( "All Day" )){
-            System.out.println (b.getText ().trim ());
-        }
-
-
-    }
-//        System.out.println (addMe.size () );
+        System.out.println (addMe.size () );
 
 
 
@@ -125,3 +111,42 @@ Pages pages = new Pages ();
 
     }
 
+
+
+    @Then("user should send text into the the search box")
+    public void userShouldSendTextIntoTheTheSearchBox() {
+        pages.getSearchPage().SearchBox.sendKeys("Availabilty" + Keys.ENTER);
+    }
+
+    @Then("User should receive relevant results")
+    public void userShouldReceiveRelevantResults() {
+       Assert.assertEquals(pages.getSearchPage().MyEvents_Label_SearchBarIcon.getAttribute("innerText"),"Availabilty");
+
+    }
+    @When("User clicks on the Filter drop down menu")
+    public void user_clicks_on_the_Filter_drop_down_menu() {
+        pages.getSearchPage().FilterButton.click();
+    }
+
+    @Then("User should be able to see the Add Custom Filter")
+    public void user_should_be_able_to_see_the_Add_Custom_Filter() {
+    Assert.assertTrue(pages.getSearchPage().AddCustomFilter.isDisplayed());
+    }
+
+    @When("User clicks on the  Add Custom Filter")
+    public void user_clicks_on_the_Add_Custom_Filter() {
+
+    }
+
+    @Then("User should be able to select any  from the drop down list")
+    public void user_should_be_able_to_select_any_from_the_drop_down_list() {
+       // pages.getSearchPage().
+    }
+
+    @Then("User should be abel to save his selected option")
+    public void user_should_be_abel_to_save_his_selected_option() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+}
