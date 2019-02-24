@@ -48,6 +48,7 @@ public class LoginTestStepDefinitions {
         waitForClickablility ( pages.getLandingPage ( ).BriteErpDemo_button , 15 );
         pages.getLandingPage ( ).BriteErpDemo_button.click ( );
         pages.getLoginPage ( ).userLogin ( );
+        pages.getHeaderPage().calendar_button.click();
     }
 
     @Then ( "the user is logged in" )

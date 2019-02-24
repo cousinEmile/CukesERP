@@ -1,12 +1,16 @@
 package com.cukeserp.pages;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import com.cukeserp.utilities.Driver;
 import org.testng.Assert;
+
+import java.util.*;
 
 public class SearchPage {
 
@@ -27,7 +31,7 @@ public class SearchPage {
     @FindBy ( xpath = "(//div[@class='btn-group o_dropdown'])[1]" )
     public WebElement FilterButton;
 
-    @FindBy ( xpath = "(//span[@class='caret'])[1]" )
+    @FindBy ( xpath = "(//span[@class='fa fa-star'])[1]" )
     public WebElement FilterDropDown;
 
     @FindBy ( xpath = "//li[@class='o_add_filter o_closed_menu']" )
@@ -47,6 +51,11 @@ public class SearchPage {
         list.selectByIndex ( index );
 
     }
+    @FindBy(xpath = "//li[@class='o_save_search o_open_menu']")
+    public WebElement FavoriteSaveCurrentSearchButton;
+
+    @FindBy(xpath = "//li[@class='o_save_search o_closed_menu']")
+    public WebElement FavoriteSaveCurrentSearchButton1;
 
     @FindBy ( xpath = "//button[@class='btn btn-primary btn-sm o_apply_filter']")
     public WebElement ApplyButton;
@@ -59,6 +68,11 @@ public class SearchPage {
 
     @FindBy ( xpath = "//select[@class='o_input o_add_group o_group_selector']" )
     public WebElement DroupDownListUnderGroupBy;
+
+    public void  list(String index){
+        Select select=new Select(DroupDownListUnderGroupBy);
+        select.selectByVisibleText(index);
+    }
 
     @FindBy ( xpath = "//button[@class='btn btn-primary btn-sm o_add_group o_select_group']" )
     public WebElement applyButtonInGroup;
@@ -123,6 +137,12 @@ public class SearchPage {
     @FindBy ( css = "select.o_input.o_searchview_extended_prop_op" )
     public WebElement CustomFilterBoolean_SelectElement;
 
+    public void select_filterFormActions(int index){
+        Select select = new Select ( CustomFilter_SelectElement );
+       select.selectByIndex(index);
+
+    }
+
     /**
      * This is just the frame of a select method. Keep in mind that which ever you choose will effect the boolean dropdown
      * Also note that when you add an additional custom filter, it duplicates an li node above
@@ -174,6 +194,22 @@ public class SearchPage {
     @FindBy ( xpath = "//ul[@class='dropdown-menu o_group_by_menu']/li[3]/a" )
     public WebElement groupPrivacy_button;
 
+    @FindBy ( xpath = "//ul[@class='dropdown-menu o_group_by_menu']/li/a" )
+    public List<WebElement> groupBy_addedItems;
+
+
+       public boolean groupCount() {
+          List<WebElement>addedItems=new ArrayList<>();
+        addedItems.addAll(groupBy_addedItems);
+        Set<WebElement>test = new HashSet<>();
+        test.addAll(addedItems);
+
+        return test.size()==addedItems.size();
+       }
+
+
+
+
     @FindBy ( css = "div.o_facet_values" )
     public WebElement Privacy_SearchBarIcon;
 
@@ -208,8 +244,18 @@ public class SearchPage {
         Assert.assertEquals ( select.getFirstSelectedOption ().getText ().trim (), custom_group);
     }
 
+    public List<String> getCustomGroups(){
+        Select select = new Select ( CustomGroupSelectElement );
+       List<WebElement> temp = select.getOptions();
+       List<String > returns = new ArrayList<>();
+       for(WebElement x: temp){
 
+           returns.add(x.getAttribute("innerText").trim());
+       }
+       return returns;
+    }
 
-
+    @FindBy(xpath = "(//ul[@class='dropdown-menu o_favorites_menu']//a)[last()]")
+    public WebElement getTextConfirmationOnFavoriteButton;
 
 }

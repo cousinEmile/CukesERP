@@ -5,7 +5,6 @@ Feature:Calendar Module
 
     Given user is on the login page
     When user logs in as general user
-    Then "user" clicks "Calendar" button
 
   Scenario:BRIT_4159_SearchBox
   User should be able to input text into the search box and receive results relevant to the search criteria.

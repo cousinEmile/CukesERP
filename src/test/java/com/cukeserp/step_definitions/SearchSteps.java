@@ -12,9 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.cukeserp.utilities.ApplicationConstants.*;
 import static com.cukeserp.utilities.BrowserUtils.waitForClickablility;
@@ -384,16 +382,143 @@ public class SearchSteps {
 
     }
 
+    @Then("user should send text into the the search box")
+    public void user_should_send_text_into_the_the_search_box() {
+        pages.getSearchPage().SearchBox.sendKeys("Availabilty" + Keys.ENTER);
+    }
 
+    @Then("User should receive relevant results")
+    public void user_should_receive_relevant_results() {
+       Assert.assertEquals(pages.getSearchPage(). MyMeetings_Label_SearchBarIcon.getText(),"Availabilty");
+    }
 
 
 
     @When ( "the user clicks on the Advanced Search icon titled Group By and selects add custom groups" )
     public void theUserClicksOnTheAdvancedSearchIconTitledGroupByAndSelectsAddCustomGroups ( ) {
+        BrowserUtils.wait(5);
+        waitForClickablility(pages.getSearchPage ().GroupBy_button,15);
         pages.getSearchPage ().GroupBy_button.click ();
+        waitForClickablility(pages.getSearchPage ().AddCustomDropDownGroup,15);
         pages.getSearchPage ().AddCustomDropDownGroup.click ();
 
     }
 
+
+    @When("User clicks on the Filter drop down menu")
+    public void user_clicks_on_the_Filter_drop_down_menu() {
+        pages.getSearchPage().FilterButton.click();
+    }
+
+    @Then("User should be able to see the Add Custom Filter")
+    public void user_should_be_able_to_see_the_Add_Custom_Filter() {
+       Assert.assertTrue(pages.getSearchPage().AddCustomFilter.isDisplayed());
+    }
+
+    @When("User clicks on the  Add Custom Filter")
+    public void user_clicks_on_the_Add_Custom_Filter() {
+        pages.getSearchPage().AddCustomFilter.click();
+    }
+
+    @Then("User should be able to select any  from the drop down list")
+    public void user_should_be_able_to_select_any_from_the_drop_down_list() {
+        Random random=new Random();
+        int k=random.nextInt(20);
+        pages.getSearchPage().Select_List(k);
+
+    }
+
+    @Then("User should be abel to save his selected option")
+    public void user_should_be_abel_to_save_his_selected_option() {
+        pages.getSearchPage().ApplyButton.click();
+     //Assert.assertTrue( pages.getSearchPage().FilterSelectedElement.isSelected());
+
+    }
+
+    @When("User clicks on the Favorites drop down menu")
+    public void user_clicks_on_the_Favorites_drop_down_menu() {
+     pages.getSearchPage().Favorites_button.click();
+    }
+
+    @Then("User should click on Save Current Search")
+    public void user_should_click_on_Save_Current_Search() {
+       pages.getSearchPage().ClickOnFavoritesDropDown.click();
+    }
+
+    @Then("User should {string} his searches and be abel to save as current search")
+    public void user_should_his_searches_and_be_abel_to_save_as_current_search(String heloo) {
+        pages.getSearchPage().clickOnSaveCurrentSearch.click();
+       pages.getSearchPage().SendTextOnSaveCurrentSearchBox.sendKeys(heloo);
+
+    }
+    @Then("user should click on Favorites button")
+    public void user_should_click_on_Favorites_button() {
+       pages.getSearchPage().Favorites_button.click();
+    }
+
+
+    @When("user should click on Add Dash Borad Icon")
+    public void user_should_click_on_Add_Dash_Borad_Icon() {
+
+   pages.getSearchPage().ClickToDashBoradIcone.click();
+    }
+
+    @Then("User should {string} his searches and be abel to Add it to Dash Board")
+    public void user_should_his_searches_and_be_abel_to_Add_it_to_Dash_Board(String mettings) {
+     pages.getSearchPage().sendTextToSaveToDashBorad.sendKeys(mettings);
+     pages.getSearchPage().AddButtonUnderADDToMyDash.click();
+
+    }
+    @Then("the {string} should be displayed and is in Alpabetical order")
+    public void the_should_be_displayed_and_is_in_Alpabetical_order(String me) {
+
+       List<String> groups =  pages.getSearchPage().getCustomGroups();
+       SortedSet <String>check = new TreeSet<>();
+       check.addAll(groups);
+
+        Assert.assertEquals(check.toString(),groups.toString());
+    }
+    @Then("user should click on Save current Search option and send text to the box")
+    public void user_should_click_on_Save_current_Search_option_and_send_text_to_the_box() {
+        pages.getSearchPage().FavoriteSaveCurrentSearchButton1.click();
+    }
+
+    @Then("user should be able to share his Favorite search with all users")
+    public void user_should_be_able_to_share_his_Favorite_search_with_all_users() {
+
+        pages.getSearchPage().SendTextOnSaveCurrentSearchBox.clear();
+        pages.getSearchPage().SendTextOnSaveCurrentSearchBox.sendKeys("Heloo");
+        pages.getSearchPage().SaveButtonOnFavorites.click();
+       Assert.assertTrue( pages.getSearchPage().getTextConfirmationOnFavoriteButton.isDisplayed());
+    }
+
+    @Then("User should be abel to save his selected option only once")
+    public void user_should_be_abel_to_save_his_selected_option_only_once() {
+        pages.getSearchPage().list("Option");
+        pages.getSearchPage().applyButtonInGroup.click();
+        pages.getSearchPage ().AddCustomDropDownGroup.click ();
+        pages.getSearchPage().list("Option");
+        pages.getSearchPage().applyButtonInGroup.click();
+        pages.getSearchPage ().AddCustomDropDownGroup.click ();
+        pages.getSearchPage().list("Option");
+        pages.getSearchPage().applyButtonInGroup.click();
+
+        Assert.assertTrue(pages.getSearchPage().groupCount());
+        System.out.println(pages.getSearchPage().groupCount());
+
+    }
+
+    @When("the user clicks on the Advanced Search icon titled Filters and selects add custom Filters")
+    public void the_user_clicks_on_the_Advanced_Search_icon_titled_Filters_and_selects_add_custom_Filters() throws InterruptedException {
+      pages.getSearchPage().FilterButton.click();
+      pages.getSearchPage().AddCustomFilter.click();
+     pages.getSearchPage().SelectFromActionNeededButton.click();
+
+    }
+
+    @Then("the add custom Filters should be displayed and is in Alpabetical order")
+    public void the_add_custom_Filters_should_be_displayed_and_is_in_Alpabetical_order() {
+
+    }
 }
 
