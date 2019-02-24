@@ -22,4 +22,7 @@ public class InboxPage {
 
     @FindBy (css = ".oe_topbar_name")
     public WebElement actualUsername;
+
+    @FindBy(xpath = "(//a[@class='oe_menu_toggler'])[2]")
+    public WebElement crmButton;
 }
