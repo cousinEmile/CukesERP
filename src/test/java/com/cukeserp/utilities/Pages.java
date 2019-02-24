@@ -14,6 +14,7 @@ public class Pages {
     private LandingPage          landingPage;
     private LoginPage            loginPage;
     private SearchPage           searchPage;
+    private SalesChannelsPage salesChannelsPage;
 
 // ------------------------------------------------------------------------Methods--------------------------------------------------------------------------------------------------
 
@@ -46,6 +47,8 @@ public class Pages {
     public SearchPage getSearchPage ( ) {
         return (searchPage == null) ? searchPage = new SearchPage ( ) : searchPage;
     }
+
+    public SalesChannelsPage getSalesChannelsPage(){return (salesChannelsPage==null) ? salesChannelsPage = new SalesChannelsPage() : salesChannelsPage; }
 
 }
 

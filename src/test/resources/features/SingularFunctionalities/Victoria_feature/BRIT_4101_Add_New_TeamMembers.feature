@@ -1,0 +1,23 @@
+Feature:
+
+
+  @BRIT-4101
+  Scenario: Add New TeamMembers
+    Given I open "http://52.39.162.23" url
+    When "I" clicks "BriteErpDemo" button
+    Then I log in as a "EventsCRM_Manager" using "EventsCRM_Manager@info.com" and "Ugh45wQ12"
+
+
+    When manager clicks SalesChannels button
+    Then manager clicks Create button
+
+    When manager clicks Channel leader dropdown
+    Then manager should be to see list options
+    And manager clicks first member from the list options
+
+    Then manager enter new email Victoria@cybertek.com
+    And manager clicks Add button
+		    
+		     
+		    
+		    
