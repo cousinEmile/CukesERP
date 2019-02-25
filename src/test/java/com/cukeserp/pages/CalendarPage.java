@@ -13,6 +13,12 @@ public class CalendarPage {
         PageFactory.initElements( Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "//div[@name='recurrency']//input[@type='checkbox']")
+    public WebElement recurrentCheckBox;
+
+    @FindBy(xpath = "//h4[@class='modal-title']")
+    public WebElement testingPurposes;
+
     @FindBy (xpath = "//div[@class='o_chat_header']/span/a[2]")
     public WebElement chatClose;
 
@@ -216,6 +222,15 @@ public class CalendarPage {
 
     @FindBy(xpath = "//div[@class='fc-row fc-widget-header']/table/thead/tr/th")
     public WebElement daysOfWeek;
+
+    @FindBy(xpath="//tr[@data-time='08:00:00']//td[@class='fc-widget-content']")
+    public WebElement eightAmBox;
+
+    @FindBy(xpath = "//tr[@data-time='07:00:00']//td[@class='fc-widget-content']")
+    public WebElement sevenAmBox;
+
+    @FindBy(xpath ="//tr[@data-time='06:00:00']//td[@class='fc-widget-content']" )
+    public WebElement sixAmBox;
 
 
 }

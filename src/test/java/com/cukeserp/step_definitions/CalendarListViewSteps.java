@@ -18,4 +18,12 @@ public class CalendarListViewSteps implements ApplicationConstants {
     Pages pages = new Pages();
 
 
+    @When("User clicks on Calendar tab")
+    public void user_clicks_on_Calendar_tab() {
+        // Write code here that turns the phrase above into concrete actions
+        pages.getHeaderPage().calendar_button.click();
+    }
+
+
+
 }
