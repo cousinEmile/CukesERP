@@ -20,11 +20,7 @@ import java.util.concurrent.TimeUnit;
                 "json:target/cucumber.json" ,
                 "html:target/cucumber/" ,
                 "rerun:target/rerun.txt"},
-<<<<<<< HEAD
         features = "src/test/resources/features/SearchFunctionality/Merry_feature",
-=======
-        features = "src/test/resources/features/SingularFunctionalities/Victoria_feature",
->>>>>>> 4c3316ac6f18bdfb7ab187211d67cb8d335ccd3d
         glue = "com.cukeserp.step_definitions"
         ,dryRun = false
         ,tags = "@wip"

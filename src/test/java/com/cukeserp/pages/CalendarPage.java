@@ -52,7 +52,7 @@ public class CalendarPage {
     @FindBy(xpath = "//div[@class='btn-group btn-group-sm o_cp_switch_buttons']/button")
     public WebElement calandarView;
 
-    @FindBy(xpath = "//div[@class='btn-group btn-group-sm o_cp_switch_buttons']/button[2]")
+    @FindBy(xpath = "(//div[@class='btn-group btn-group-sm o_cp_switch_buttons'])/button[2]")
     public WebElement listView;
 
     @FindBy(xpath = "//div[@class='o_cp_searchview']/div/input")

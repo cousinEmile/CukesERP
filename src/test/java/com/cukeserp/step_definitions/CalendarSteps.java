@@ -11,15 +11,19 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import static com.cukeserp.utilities.ApplicationConstants.CALENDAR_PAGE_TITLE;
 
-public class CalendarSteps implements ApplicationConstants {
+public class CalendarSteps extends BrowserUtils implements ApplicationConstants {
     Pages pages = new Pages();
 
     @When("hover to the List option on the right top corner")
-    public void hover_to_the_option_on_the_right_top_corner(String listButton) {
-        BrowserUtils.hover(pages.getCalendar().listView);
-        }
+    public void hover_to_the_List_option_on_the_right_top_corner() {
+        hover(pages.getCalendar().listView);
+    }
+
+
+
 
 }

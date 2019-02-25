@@ -15,7 +15,6 @@ Feature:
     When "I" clicks "BriteErpDemo" button
     Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
     Then "Manager" clicks "Calendar" button
-
     Then "Calendar page" Title should be displayed "Meetings - Odoo"
     When hover to the List option on the right top corner
     Then "Manager" should be able to see "List" button

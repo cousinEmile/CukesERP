@@ -19,7 +19,7 @@ public class UniversalStepDefinitions extends BrowserUtils {
 
     @Then("{string} Title should be displayed {string}")
     public void title_should_be_displayed(String Title, String actualTitle) {
-        waitUntilTitleEquals(10, actualTitle);
+        BrowserUtils.waitUntilTitleEquals(10, actualTitle);
         Assert.assertEquals(Driver.getDriver().getTitle(), actualTitle);
 //        System.out.println(Driver.getDriver().getTitle());
     }
