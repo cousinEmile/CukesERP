@@ -9,8 +9,7 @@ Feature:
   @BRIT-4027 @Calendar @Mclean
   Scenario: Cucumber - Calendar Import -The first row contains the label of the column
 
-    Given I open "http://52.39.162.23" url
-    When "I" clicks "BriteErpDemo" button
+    Given I open "http://54.148.96.210/web/login" url
     Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
     Then "Manager" clicks "Calendar" button
     Then "Calendar page" Title should be displayed "Meetings - Odoo"

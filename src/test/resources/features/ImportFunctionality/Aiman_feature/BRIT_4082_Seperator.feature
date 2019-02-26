@@ -7,8 +7,7 @@ Feature:
 	# * Verify 'Separator' is displayed and User can select
   @BRIT-4082 @Calendar @Mclean
   Scenario: Cucumber - Calendar Import - Separator
-    Given I open "http://52.39.162.23" url
-    When "I" clicks "BriteErpDemo" button
+    Given I open "http://54.148.96.210/web/login" url
     Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
     Then "Manager" clicks "Calendar" button
     Then "Manager" clicks "List" button
