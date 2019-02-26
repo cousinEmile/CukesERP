@@ -1,13 +1,8 @@
-@PR3
 Feature:
 
   @BRIT-4023
   Scenario Outline: BRIT-4023 Cucumber - Calendar / Import actions - Login (Manager && User)
-   # Pre-Condition: Environment is up and running
-
-    Given I open "http://52.39.162.23" url
-    Then "Landing Page" Title should be displayed "Odoo"
-    When "I" clicks "BriteErpDemo" button
+    Given I open "http://54.148.96.210/web/login" url
     Then "Login Page" Title should be displayed "Login | Website localhost"
     When I log in as a "<username>" using "<email>" and "<password>"
     Then "Inbox Page" Title should be displayed "#Inbox - Odoo"

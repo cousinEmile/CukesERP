@@ -23,8 +23,7 @@ Feature:
   Scenario: Cucumber - Calendar / Import actions Error message (Manager)
 		# Pre-Condition: Environment is up and running
 
-    Given I open "http://52.39.162.23" url
-    When "I" clicks "BriteErpDemo" button
+    Given I open "http://54.148.96.210/web/login" url
     Then I log in as a "Inventory Manager 2" using "inm2@info.com" and "alsfuh7we68"
     Then "Manager" clicks "Calendar" button
     Then "Manager" clicks "List" button
