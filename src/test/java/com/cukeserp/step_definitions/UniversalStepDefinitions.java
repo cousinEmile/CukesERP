@@ -367,8 +367,11 @@ public class UniversalStepDefinitions extends BrowserUtils {
                 break;
         }
 
-
     }
 
+    @Then("{string} should be able to choose and click {string} Message")
+    public void should_be_able_to_choose_and_click_Message(String string, String string2) {
+
+    }
 
 }
